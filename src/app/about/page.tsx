@@ -17,6 +17,15 @@ export default function AboutPage() {
           />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+          <div className="w-24 h-24 mx-auto mb-6 relative rounded-full overflow-hidden border-2 border-[#C9A052] shadow-2xl bg-[#FFFDF8]">
+            <Image
+              src="/images/logo.jpg"
+              alt="DRL Resin & Décor Seal"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
           <span className="text-xs uppercase tracking-widest text-[#C9A052] font-semibold">
             Our Heritage & Philosophy
           </span>

@@ -228,6 +228,7 @@
       "price": 8900,
       "compareAtPrice": 10500,
       "images": [
+        "/uploads/custom_clock.png",
         "https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?auto=format&fit=crop&w=1200&q=85",
         "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=1200&q=85"
       ],

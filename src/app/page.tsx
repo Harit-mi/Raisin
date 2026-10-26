@@ -296,9 +296,22 @@ export default function HomePage() {
 
             {/* Storytelling Text */}
             <div className="flex flex-col justify-center">
-              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#C9A052] font-semibold mb-3">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>The DRL Philosophy</span>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 relative rounded-full overflow-hidden border-2 border-[#C9A052]/60 shadow-xl flex-shrink-0 bg-[#FFFDF8]">
+                  <Image
+                    src="/images/logo.jpg"
+                    alt="DRL Resin & Décor Master Emblem"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#C9A052] font-semibold">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    <span>The DRL Philosophy</span>
+                  </div>
+                  <p className="text-xs text-[#E5C77F] italic font-serif">Handcrafted with passion</p>
+                </div>
               </div>
 
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#FFFDF8] leading-tight mb-6">

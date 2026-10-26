@@ -16,12 +16,17 @@ export const metadata: Metadata = {
     "resin coasters",
     "customized gifts India",
   ],
+  icons: {
+    icon: "/images/logo.jpg",
+    apple: "/images/logo.jpg",
+  },
   openGraph: {
     title: "DRL Resin & Decor | Handcrafted Luxury Resin Art",
     description:
       "Handcrafted resin art, elegant home décor, and custom creations designed to bring beauty and individuality into your space.",
     type: "website",
     locale: "en_IN",
+    images: [{ url: "/images/logo.jpg", width: 800, height: 800, alt: "DRL Resin & Décor" }],
   },
 };
 
