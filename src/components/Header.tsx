@@ -61,7 +61,7 @@ export function Header() {
             <Sparkles className="w-3.5 h-3.5 text-[#C9A052] animate-pulse hidden sm:inline" />
             <span>{announcementText}</span>
           </div>
-          <div className="hidden lg:flex items-center gap-4 text-[11px] text-[#A69A86]">
+          <div className="hidden lg:flex items-center gap-4 text-[11px] text-[#CBD5E1]">
             <Link href="/track-order" className="hover:text-[#E5C77F] transition-colors">
               Track Order
             </Link>
@@ -78,7 +78,7 @@ export function Header() {
         className={`sticky top-0 z-40 transition-all duration-300 ${
           isScrolled
             ? "bg-[#121210]/95 backdrop-blur-md shadow-md py-3.5 border-b border-[#C9A052]/20"
-            : "bg-[#1B1915] py-4 border-b border-[#121210]"
+            : "bg-[#121210] py-4 border-b border-[#121210]"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -143,7 +143,7 @@ export function Header() {
             >
               <Heart className="w-5 h-5" />
               {wishlistCount > 0 && (
-                <span className="absolute top-1 right-1 bg-[#C9A052] text-[#121210] font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center">
+                <span className="absolute top-1 right-1 bg-[#C9A052] text-[#0B0B0A] font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center">
                   {wishlistCount}
                 </span>
               )}
@@ -166,7 +166,7 @@ export function Header() {
             >
               <ShoppingBag className="w-4 h-4 transition-transform group-hover:scale-110" />
               <span className="hidden sm:inline">Bag</span>
-              <span className="bg-[#C9A052] text-[#121210] font-bold text-[11px] px-1.5 py-0.2 rounded-full min-w-[18px] text-center">
+              <span className="bg-[#C9A052] text-[#0B0B0A] font-bold text-[11px] px-1.5 py-0.2 rounded-full min-w-[18px] text-center">
                 {itemCount}
               </span>
             </button>
@@ -177,10 +177,10 @@ export function Header() {
       {/* Fullscreen Search Modal */}
       {searchOpen && (
         <div className="fixed inset-0 z-50 bg-[#121210]/90 backdrop-blur-md flex items-start justify-center pt-24 px-4 animate-in fade-in duration-200">
-          <div className="bg-[#1B1915] border border-[#C9A052]/30 rounded-2xl w-full max-w-2xl p-6 shadow-2xl relative text-[#FFFDF8]">
+          <div className="bg-[#121210] border border-[#C9A052]/30 rounded-2xl w-full max-w-2xl p-6 shadow-2xl relative text-[#FFFDF8]">
             <button
               onClick={() => setSearchOpen(false)}
-              className="absolute top-5 right-5 text-[#A69A86] hover:text-white"
+              className="absolute top-5 right-5 text-[#CBD5E1] hover:text-white"
               aria-label="Close search"
             >
               <X className="w-6 h-6" />
@@ -208,14 +208,14 @@ export function Header() {
               <Search className="w-5 h-5 text-[#C9A052] absolute left-3.5 top-4" />
               <button
                 type="submit"
-                className="absolute right-2 top-2 bg-[#C9A052] text-[#121210] font-medium text-xs px-4 py-2 rounded-lg hover:bg-[#E5C77F] transition-colors"
+                className="absolute right-2 top-2 bg-[#C9A052] text-[#0B0B0A] font-medium text-xs px-4 py-2 rounded-lg hover:bg-[#E5C77F] transition-colors"
               >
                 Search
               </button>
             </form>
 
             <div className="mt-6">
-              <span className="text-xs uppercase tracking-wider text-[#A69A86] font-medium">Popular Curations:</span>
+              <span className="text-xs uppercase tracking-wider text-[#CBD5E1] font-medium">Popular Curations:</span>
               <div className="flex flex-wrap gap-2 mt-2">
                 {[
                   "Ocean Reverie",
@@ -247,13 +247,13 @@ export function Header() {
             className="fixed inset-0 bg-black/75 backdrop-blur-sm"
             onClick={() => setMobileMenuOpen(false)}
           />
-          <div className="fixed inset-y-0 left-0 w-full max-w-xs bg-[#1B1915] border-r border-[#C9A052]/20 p-6 flex flex-col justify-between overflow-y-auto">
+          <div className="fixed inset-y-0 left-0 w-full max-w-xs bg-[#121210] border-r border-[#C9A052]/20 p-6 flex flex-col justify-between overflow-y-auto">
             <div>
               <div className="flex items-center justify-between pb-6 border-b border-[#C9A052]/20">
                 <Logo theme="dark" size="sm" />
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 text-[#A69A86] hover:text-white"
+                  className="p-2 text-[#CBD5E1] hover:text-white"
                   aria-label="Close menu"
                 >
                   <X className="w-6 h-6" />
@@ -284,14 +284,14 @@ export function Header() {
                 <Link
                   href="/track-order"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-xs text-[#A69A86] hover:text-[#E5C77F] py-1"
+                  className="text-xs text-[#CBD5E1] hover:text-[#E5C77F] py-1"
                 >
                   Track Existing Order
                 </Link>
                 <Link
                   href="/account"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-xs text-[#A69A86] hover:text-[#E5C77F] py-1"
+                  className="text-xs text-[#CBD5E1] hover:text-[#E5C77F] py-1"
                 >
                   My Account & Inquiries
                 </Link>
@@ -309,7 +309,7 @@ export function Header() {
               <Link
                 href="/book-consultation"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full bg-[#C9A052] text-[#121210] font-semibold text-xs uppercase tracking-widest py-3 px-4 rounded-xl flex items-center justify-center gap-2 hover:bg-[#E5C77F] transition-colors"
+                className="w-full bg-[#C9A052] text-[#0B0B0A] font-semibold text-xs uppercase tracking-widest py-3 px-4 rounded-xl flex items-center justify-center gap-2 hover:bg-[#E5C77F] transition-colors"
               >
                 <PhoneCall className="w-4 h-4" />
                 Book Consultation

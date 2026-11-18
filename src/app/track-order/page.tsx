@@ -82,22 +82,22 @@ function TrackOrderContent() {
   };
 
   return (
-    <div className="bg-[#FFFDF8] min-h-screen py-12">
+    <div className="bg-[#0B0B0A] min-h-screen py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-xl mx-auto mb-10">
           <span className="text-xs uppercase tracking-widest text-[#C9A052] font-semibold">
             Live Consignment Status
           </span>
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-[#1B1915] mt-1">
+          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-[#E2E8F0] mt-1">
             Track Your Order
           </h1>
-          <p className="text-xs sm:text-sm text-[#77736B] mt-2">
+          <p className="text-xs sm:text-sm text-[#94A3B8] mt-2">
             Enter your order reference ID (sent to your confirmation email) to view live atelier production and courier progress.
           </p>
         </div>
 
         {/* Search Bar */}
-        <div className="bg-white border border-[#C9A052]/20 rounded-3xl p-6 sm:p-8 shadow-sm mb-10">
+        <div className="bg-[#161614] border border-[#C9A052]/20 rounded-3xl p-6 sm:p-8 shadow-sm mb-10">
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
             <div className="relative flex-1">
               <input
@@ -106,14 +106,14 @@ function TrackOrderContent() {
                 value={orderId}
                 onChange={(e) => setOrderId(e.target.value.toUpperCase())}
                 placeholder="e.g. DRL-2026-8841"
-                className="w-full bg-[#FFFDF8] border border-[#A69A86]/30 rounded-xl px-4 py-3 pl-11 text-xs uppercase font-mono font-semibold text-[#1B1915] placeholder-[#77736B] focus:outline-none focus:border-[#C9A052]"
+                className="w-full bg-[#0B0B0A] border border-[#A69A86]/30 rounded-xl px-4 py-3 pl-11 text-xs uppercase font-mono font-semibold text-[#E2E8F0] placeholder-[#77736B] focus:outline-none focus:border-[#C9A052]"
               />
               <Search className="w-4 h-4 text-[#C9A052] absolute left-4 top-3.5" />
             </div>
             <button
               type="submit"
               disabled={loading || !orderId.trim()}
-              className="bg-[#1B1915] hover:bg-[#C9A052] hover:text-[#121210] text-[#E5C77F] font-bold text-xs uppercase tracking-widest px-8 py-3 rounded-xl transition-all shadow-md disabled:opacity-50 flex items-center justify-center gap-2"
+              className="bg-[#121210] hover:bg-[#C9A052] hover:text-[#0B0B0A] text-[#E5C77F] font-bold text-xs uppercase tracking-widest px-8 py-3 rounded-xl transition-all shadow-md disabled:opacity-50 flex items-center justify-center gap-2"
             >
               {loading ? (
                 <>
@@ -138,7 +138,7 @@ function TrackOrderContent() {
         {order && (
           <div className="space-y-8 animate-in fade-in duration-300">
             {/* Header Card */}
-            <div className="bg-[#1B1915] text-[#FFFDF8] rounded-3xl p-6 sm:p-8 border border-[#C9A052]/30 shadow-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="bg-[#121210] text-[#FFFDF8] rounded-3xl p-6 sm:p-8 border border-[#C9A052]/30 shadow-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
                 <span className="text-[10px] uppercase tracking-widest text-[#C9A052] font-semibold">
                   Consignment Dossier
@@ -146,22 +146,22 @@ function TrackOrderContent() {
                 <h2 className="font-mono text-xl sm:text-2xl font-bold text-white mt-0.5">
                   {order.id}
                 </h2>
-                <p className="text-xs text-[#A69A86] mt-1">
+                <p className="text-xs text-[#CBD5E1] mt-1">
                   Recipient: {order.customer.fullName} · {order.customer.city}, {order.customer.state}
                 </p>
               </div>
 
               <div className="text-left sm:text-right">
-                <span className="text-[10px] uppercase text-[#A69A86] block">Current Status</span>
-                <span className="text-xs bg-[#C9A052] text-[#121210] font-bold px-3 py-1 rounded-full uppercase inline-block mt-1">
+                <span className="text-[10px] uppercase text-[#CBD5E1] block">Current Status</span>
+                <span className="text-xs bg-[#C9A052] text-[#0B0B0A] font-bold px-3 py-1 rounded-full uppercase inline-block mt-1">
                   {order.orderStatus}
                 </span>
               </div>
             </div>
 
             {/* Stepper Timeline */}
-            <div className="bg-white border border-[#C9A052]/20 rounded-3xl p-6 sm:p-8 shadow-sm">
-              <h3 className="font-serif text-lg font-bold text-[#1B1915] mb-6 pb-3 border-b border-[#F4EFE5]">
+            <div className="bg-[#161614] border border-[#C9A052]/20 rounded-3xl p-6 sm:p-8 shadow-sm">
+              <h3 className="font-serif text-lg font-bold text-[#E2E8F0] mb-6 pb-3 border-b border-[#C9A052]/20">
                 Production & Fulfillment Progress
               </h3>
 
@@ -175,8 +175,8 @@ function TrackOrderContent() {
                         stepState === "completed"
                           ? "bg-emerald-50 border-emerald-300 text-emerald-900"
                           : stepState === "current"
-                          ? "bg-[#1B1915] border-[#C9A052] text-[#E5C77F] ring-2 ring-[#C9A052]/30"
-                          : "bg-[#FFFDF8] border-[#F4EFE5] text-[#77736B] opacity-60"
+                          ? "bg-[#121210] border-[#C9A052] text-[#E5C77F] ring-2 ring-[#C9A052]/30"
+                          : "bg-[#0B0B0A] border-[#C9A052]/20 text-[#94A3B8] opacity-60"
                       }`}
                     >
                       <div className="flex items-center justify-between mb-2">
@@ -197,10 +197,10 @@ function TrackOrderContent() {
 
               {/* Courier Specifics */}
               {order.trackingNumber && (
-                <div className="mt-8 pt-6 border-t border-[#F4EFE5] bg-[#F4EFE5]/50 p-4 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+                <div className="mt-8 pt-6 border-t border-[#C9A052]/20 bg-[#161614]/50 p-4 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
                   <div>
-                    <span className="text-[#77736B] block">Courier Partner & Air Waybill (AWB):</span>
-                    <strong className="text-[#1B1915] text-sm">
+                    <span className="text-[#94A3B8] block">Courier Partner & Air Waybill (AWB):</span>
+                    <strong className="text-[#E2E8F0] text-sm">
                       {order.trackingCarrier || "Blue Dart Express"} · AWB #{order.trackingNumber}
                     </strong>
                   </div>
@@ -208,7 +208,7 @@ function TrackOrderContent() {
                     href={`https://www.bluedart.com/tracking?trackNumber=${order.trackingNumber}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-[#1B1915] text-[#E5C77F] px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider flex items-center gap-1 hover:bg-[#C9A052] hover:text-[#121210] transition-colors"
+                    className="bg-[#121210] text-[#E5C77F] px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider flex items-center gap-1 hover:bg-[#C9A052] hover:text-[#0B0B0A] transition-colors"
                   >
                     <span>External AWB Tracker</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -218,16 +218,16 @@ function TrackOrderContent() {
             </div>
 
             {/* Item Manifest */}
-            <div className="bg-white border border-[#C9A052]/20 rounded-3xl p-6 sm:p-8 shadow-sm">
-              <h3 className="font-serif text-lg font-bold text-[#1B1915] mb-4 pb-3 border-b border-[#F4EFE5]">
+            <div className="bg-[#161614] border border-[#C9A052]/20 rounded-3xl p-6 sm:p-8 shadow-sm">
+              <h3 className="font-serif text-lg font-bold text-[#E2E8F0] mb-4 pb-3 border-b border-[#C9A052]/20">
                 Consignment Manifest ({order.items.length} items)
               </h3>
 
-              <div className="divide-y divide-[#F4EFE5]">
+              <div className="divide-y divide-[#C9A052]/15">
                 {order.items.map((item, idx) => (
                   <div key={idx} className="py-3 flex items-center justify-between gap-4">
                     <div className="flex items-center gap-3">
-                      <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-[#F4EFE5] flex-shrink-0">
+                      <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-[#161614] flex-shrink-0">
                         <Image
                           src={item.image || "/placeholder.jpg"}
                           alt={item.name}
@@ -237,13 +237,13 @@ function TrackOrderContent() {
                         />
                       </div>
                       <div>
-                        <h4 className="font-serif text-sm font-semibold text-[#1B1915]">{item.name}</h4>
-                        <span className="text-[11px] text-[#77736B]">
+                        <h4 className="font-serif text-sm font-semibold text-[#E2E8F0]">{item.name}</h4>
+                        <span className="text-[11px] text-[#94A3B8]">
                           Qty: {item.quantity} · Price: ₹{item.unitPrice.toLocaleString("en-IN")}
                         </span>
                       </div>
                     </div>
-                    <span className="font-serif font-bold text-xs text-[#1B1915]">
+                    <span className="font-serif font-bold text-xs text-[#E2E8F0]">
                       ₹{item.totalPrice.toLocaleString("en-IN")}
                     </span>
                   </div>
@@ -261,8 +261,8 @@ export default function TrackOrderPage() {
   return (
     <Suspense
       fallback={
-        <div className="py-24 text-center bg-[#FFFDF8]">
-          <p className="font-serif text-lg text-[#1B1915]">Loading Consignment Tracker...</p>
+        <div className="py-24 text-center bg-[#0B0B0A]">
+          <p className="font-serif text-lg text-[#E2E8F0]">Loading Consignment Tracker...</p>
         </div>
       }
     >

@@ -80,7 +80,7 @@ export default function BookConsultationPage() {
   };
 
   return (
-    <div className="bg-[#FFFDF8] min-h-screen py-12">
+    <div className="bg-[#0B0B0A] min-h-screen py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-10">
@@ -88,17 +88,17 @@ export default function BookConsultationPage() {
             <Sparkles className="w-3.5 h-3.5" />
             <span>Private Design Atelier Session</span>
           </div>
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-[#1B1915]">
+          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-[#E2E8F0]">
             Book a 1-on-1 Design Consultation
           </h1>
-          <p className="text-xs sm:text-sm text-[#77736B] mt-2 leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#94A3B8] mt-2 leading-relaxed">
             Discuss timber selection, room lighting harmony, custom pigments, and architectural dimensions with our founder and master resin craftsman.
           </p>
         </div>
 
         {confirmedBookingId ? (
           /* Confirmation card */
-          <div className="bg-white border border-[#C9A052]/40 rounded-3xl p-8 sm:p-12 shadow-xl text-center max-w-xl mx-auto">
+          <div className="bg-[#161614] border border-[#C9A052]/40 rounded-3xl p-8 sm:p-12 shadow-xl text-center max-w-xl mx-auto">
             <div className="w-16 h-16 rounded-full bg-[#C9A052]/15 text-[#C9A052] flex items-center justify-center mx-auto mb-4 border border-[#C9A052]/30">
               <CheckCircle2 className="w-8 h-8" />
             </div>
@@ -106,42 +106,42 @@ export default function BookConsultationPage() {
             <span className="text-xs uppercase tracking-widest font-semibold text-[#C9A052]">
               Consultation Slot Reserved
             </span>
-            <h2 className="font-serif text-2xl font-bold text-[#1B1915] mt-1 mb-2">
+            <h2 className="font-serif text-2xl font-bold text-[#E2E8F0] mt-1 mb-2">
               Appointment Scheduled!
             </h2>
-            <p className="text-xs text-[#77736B] mb-6">
-              Reference Code: <strong className="font-mono text-[#1B1915]">{confirmedBookingId}</strong>
+            <p className="text-xs text-[#94A3B8] mb-6">
+              Reference Code: <strong className="font-mono text-[#E2E8F0]">{confirmedBookingId}</strong>
             </p>
 
-            <div className="bg-[#FFFDF8] border border-[#F4EFE5] rounded-2xl p-5 text-left text-xs space-y-2 mb-8">
+            <div className="bg-[#0B0B0A] border border-[#C9A052]/20 rounded-2xl p-5 text-left text-xs space-y-2 mb-8">
               <div className="flex justify-between">
-                <span className="text-[#77736B]">Patron:</span>
-                <span className="font-semibold text-[#1B1915]">{fullName}</span>
+                <span className="text-[#94A3B8]">Patron:</span>
+                <span className="font-semibold text-[#E2E8F0]">{fullName}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[#77736B]">Date & Slot:</span>
-                <span className="font-semibold text-[#1B1915]">{preferredDate} · {preferredTimeSlot}</span>
+                <span className="text-[#94A3B8]">Date & Slot:</span>
+                <span className="font-semibold text-[#E2E8F0]">{preferredDate} · {preferredTimeSlot}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[#77736B]">Channel:</span>
-                <span className="font-semibold text-[#1B1915]">{preferredContactMethod}</span>
+                <span className="text-[#94A3B8]">Channel:</span>
+                <span className="font-semibold text-[#E2E8F0]">{preferredContactMethod}</span>
               </div>
             </div>
 
-            <p className="text-[11px] text-[#A69A86] mb-8 leading-relaxed">
+            <p className="text-[11px] text-[#CBD5E1] mb-8 leading-relaxed">
               *A Google Calendar invite and meeting link will be dispatched to <strong>{email}</strong> once our studio team approves the agenda.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/shop"
-                className="bg-[#1B1915] text-[#E5C77F] font-semibold text-xs uppercase tracking-widest px-6 py-3 rounded-xl hover:bg-[#C9A052] hover:text-[#121210] transition-colors"
+                className="bg-[#121210] text-[#E5C77F] font-semibold text-xs uppercase tracking-widest px-6 py-3 rounded-xl hover:bg-[#C9A052] hover:text-[#0B0B0A] transition-colors"
               >
                 Explore Collection
               </Link>
               <Link
                 href="/"
-                className="border border-[#C9A052] text-[#1B1915] font-semibold text-xs uppercase tracking-widest px-6 py-3 rounded-xl hover:bg-[#F4EFE5] transition-colors"
+                className="border border-[#C9A052] text-[#E2E8F0] font-semibold text-xs uppercase tracking-widest px-6 py-3 rounded-xl hover:bg-[#161614] transition-colors"
               >
                 Back to Home
               </Link>
@@ -151,11 +151,11 @@ export default function BookConsultationPage() {
           /* Consultation Form */
           <form
             onSubmit={handleSubmit}
-            className="bg-white border border-[#C9A052]/20 rounded-3xl p-6 sm:p-10 shadow-sm space-y-6"
+            className="bg-[#161614] border border-[#C9A052]/20 rounded-3xl p-6 sm:p-10 shadow-sm space-y-6"
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
-                <label className="block text-xs uppercase tracking-wider font-semibold text-[#1B1915] mb-1.5">
+                <label className="block text-xs uppercase tracking-wider font-semibold text-[#E2E8F0] mb-1.5">
                   Your Full Name *
                 </label>
                 <input
@@ -164,12 +164,12 @@ export default function BookConsultationPage() {
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder="e.g. Radhika Kapoor"
-                  className="w-full bg-[#FFFDF8] border border-[#A69A86]/30 rounded-xl px-4 py-2.5 text-xs text-[#1B1915] focus:outline-none focus:border-[#C9A052]"
+                  className="w-full bg-[#0B0B0A] border border-[#A69A86]/30 rounded-xl px-4 py-2.5 text-xs text-[#E2E8F0] focus:outline-none focus:border-[#C9A052]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs uppercase tracking-wider font-semibold text-[#1B1915] mb-1.5">
+                <label className="block text-xs uppercase tracking-wider font-semibold text-[#E2E8F0] mb-1.5">
                   Email Address *
                 </label>
                 <input
@@ -178,12 +178,12 @@ export default function BookConsultationPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="radhika@example.com"
-                  className="w-full bg-[#FFFDF8] border border-[#A69A86]/30 rounded-xl px-4 py-2.5 text-xs text-[#1B1915] focus:outline-none focus:border-[#C9A052]"
+                  className="w-full bg-[#0B0B0A] border border-[#A69A86]/30 rounded-xl px-4 py-2.5 text-xs text-[#E2E8F0] focus:outline-none focus:border-[#C9A052]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs uppercase tracking-wider font-semibold text-[#1B1915] mb-1.5">
+                <label className="block text-xs uppercase tracking-wider font-semibold text-[#E2E8F0] mb-1.5">
                   Phone / WhatsApp *
                 </label>
                 <input
@@ -192,18 +192,18 @@ export default function BookConsultationPage() {
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="+91 98765 43210"
-                  className="w-full bg-[#FFFDF8] border border-[#A69A86]/30 rounded-xl px-4 py-2.5 text-xs text-[#1B1915] focus:outline-none focus:border-[#C9A052]"
+                  className="w-full bg-[#0B0B0A] border border-[#A69A86]/30 rounded-xl px-4 py-2.5 text-xs text-[#E2E8F0] focus:outline-none focus:border-[#C9A052]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs uppercase tracking-wider font-semibold text-[#1B1915] mb-1.5">
+                <label className="block text-xs uppercase tracking-wider font-semibold text-[#E2E8F0] mb-1.5">
                   Project / Commission Nature:
                 </label>
                 <select
                   value={projectType}
                   onChange={(e) => setProjectType(e.target.value)}
-                  className="w-full bg-[#FFFDF8] border border-[#A69A86]/30 rounded-xl px-3 py-2.5 text-xs text-[#1B1915] focus:outline-none focus:border-[#C9A052]"
+                  className="w-full bg-[#0B0B0A] border border-[#A69A86]/30 rounded-xl px-3 py-2.5 text-xs text-[#E2E8F0] focus:outline-none focus:border-[#C9A052]"
                 >
                   <option value="Custom River Table / Dining Room Commission">Custom River Table / Dining Room</option>
                   <option value="Architectural Large Wall Art Triptych">Architectural Wall Art Installation</option>
@@ -215,9 +215,9 @@ export default function BookConsultationPage() {
             </div>
 
             {/* Date & Time Slot */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-3 border-t border-[#F4EFE5]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-3 border-t border-[#C9A052]/20">
               <div>
-                <label className="block text-xs uppercase tracking-wider font-semibold text-[#1B1915] mb-1.5">
+                <label className="block text-xs uppercase tracking-wider font-semibold text-[#E2E8F0] mb-1.5">
                   Preferred Consultation Date *
                 </label>
                 <input
@@ -226,18 +226,18 @@ export default function BookConsultationPage() {
                   min="2026-01-01"
                   value={preferredDate}
                   onChange={(e) => setPreferredDate(e.target.value)}
-                  className="w-full bg-[#FFFDF8] border border-[#A69A86]/30 rounded-xl px-4 py-2.5 text-xs text-[#1B1915] focus:outline-none focus:border-[#C9A052]"
+                  className="w-full bg-[#0B0B0A] border border-[#A69A86]/30 rounded-xl px-4 py-2.5 text-xs text-[#E2E8F0] focus:outline-none focus:border-[#C9A052]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs uppercase tracking-wider font-semibold text-[#1B1915] mb-1.5">
+                <label className="block text-xs uppercase tracking-wider font-semibold text-[#E2E8F0] mb-1.5">
                   Preferred IST Time Slot *
                 </label>
                 <select
                   value={preferredTimeSlot}
                   onChange={(e) => setPreferredTimeSlot(e.target.value)}
-                  className="w-full bg-[#FFFDF8] border border-[#A69A86]/30 rounded-xl px-3 py-2.5 text-xs text-[#1B1915] focus:outline-none focus:border-[#C9A052]"
+                  className="w-full bg-[#0B0B0A] border border-[#A69A86]/30 rounded-xl px-3 py-2.5 text-xs text-[#E2E8F0] focus:outline-none focus:border-[#C9A052]"
                 >
                   {timeSlots.map((slot) => (
                     <option key={slot} value={slot}>
@@ -249,8 +249,8 @@ export default function BookConsultationPage() {
             </div>
 
             {/* Contact Method */}
-            <div className="pt-3 border-t border-[#F4EFE5]">
-              <label className="block text-xs uppercase tracking-wider font-semibold text-[#1B1915] mb-2">
+            <div className="pt-3 border-t border-[#C9A052]/20">
+              <label className="block text-xs uppercase tracking-wider font-semibold text-[#E2E8F0] mb-2">
                 Preferred Mode of Consultation:
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
@@ -268,8 +268,8 @@ export default function BookConsultationPage() {
                       onClick={() => setPreferredContactMethod(item.label as typeof preferredContactMethod)}
                       className={`p-3 rounded-xl border text-xs font-medium flex flex-col items-center justify-center gap-1.5 transition-all ${
                         preferredContactMethod === item.label
-                          ? "border-[#C9A052] bg-[#1B1915] text-[#E5C77F] font-semibold"
-                          : "border-[#F4EFE5] bg-[#FFFDF8] text-[#77736B] hover:border-[#A69A86]"
+                          ? "border-[#C9A052] bg-[#121210] text-[#E5C77F] font-semibold"
+                          : "border-[#C9A052]/20 bg-[#0B0B0A] text-[#94A3B8] hover:border-[#A69A86]"
                       }`}
                     >
                       <Icon className="w-4 h-4 text-[#C9A052]" />
@@ -281,8 +281,8 @@ export default function BookConsultationPage() {
             </div>
 
             {/* Project Details */}
-            <div className="pt-3 border-t border-[#F4EFE5]">
-              <label className="block text-xs uppercase tracking-wider font-semibold text-[#1B1915] mb-1.5">
+            <div className="pt-3 border-t border-[#C9A052]/20">
+              <label className="block text-xs uppercase tracking-wider font-semibold text-[#E2E8F0] mb-1.5">
                 Project Vision & Scope Details *
               </label>
               <textarea
@@ -291,7 +291,7 @@ export default function BookConsultationPage() {
                 value={projectDescription}
                 onChange={(e) => setProjectDescription(e.target.value)}
                 placeholder="Describe your room dimensions, color palette, reference thoughts, or questions for our artisan..."
-                className="w-full bg-[#FFFDF8] border border-[#A69A86]/30 rounded-xl p-3.5 text-xs text-[#1B1915] placeholder-[#77736B] focus:outline-none focus:border-[#C9A052]"
+                className="w-full bg-[#0B0B0A] border border-[#A69A86]/30 rounded-xl p-3.5 text-xs text-[#E2E8F0] placeholder-[#77736B] focus:outline-none focus:border-[#C9A052]"
               />
             </div>
 
@@ -303,7 +303,7 @@ export default function BookConsultationPage() {
             )}
 
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="text-[11px] text-[#77736B] flex items-center gap-1.5">
+              <div className="text-[11px] text-[#94A3B8] flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-[#C9A052]" />
                 <span>Complimentary 30-minute private consultation</span>
               </div>
@@ -311,7 +311,7 @@ export default function BookConsultationPage() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full sm:w-auto bg-[#C9A052] hover:bg-[#E5C77F] text-[#121210] font-bold text-xs uppercase tracking-widest px-8 py-3.5 rounded-xl transition-all shadow-md disabled:opacity-50"
+                className="w-full sm:w-auto bg-[#C9A052] hover:bg-[#E5C77F] text-[#0B0B0A] font-bold text-xs uppercase tracking-widest px-8 py-3.5 rounded-xl transition-all shadow-md disabled:opacity-50"
               >
                 {submitting ? "Reserving Slot..." : "Confirm & Schedule Appointment"}
               </button>

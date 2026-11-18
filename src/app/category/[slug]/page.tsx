@@ -46,16 +46,16 @@ export default function CategoryPage({
   }, [slug]);
 
   return (
-    <div className="bg-[#FFFDF8] min-h-screen py-12">
+    <div className="bg-[#0B0B0A] min-h-screen py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="border-b border-[#F4EFE5] pb-6 mb-10 text-center max-w-2xl mx-auto">
+        <div className="border-b border-[#C9A052]/20 pb-6 mb-10 text-center max-w-2xl mx-auto">
           <span className="text-xs uppercase tracking-widest text-[#C9A052] font-semibold">
             Signature Category
           </span>
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#1B1915] mt-1">
+          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#E2E8F0] mt-1">
             {formattedTitle}
           </h1>
-          <p className="text-xs sm:text-sm text-[#77736B] mt-2">
+          <p className="text-xs sm:text-sm text-[#94A3B8] mt-2">
             Explore authentic hand-poured creations crafted in our atelier for this collection.
           </p>
         </div>
@@ -75,7 +75,7 @@ export default function CategoryPage({
         <div className="mt-16 text-center">
           <Link
             href="/shop"
-            className="inline-flex items-center gap-2 bg-[#1B1915] text-[#E5C77F] hover:bg-[#C9A052] hover:text-[#121210] font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-xl transition-all shadow-md"
+            className="inline-flex items-center gap-2 bg-[#121210] text-[#E5C77F] hover:bg-[#C9A052] hover:text-[#0B0B0A] font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-xl transition-all shadow-md"
           >
             <span>View All Categories</span>
             <ArrowRight className="w-4 h-4" />

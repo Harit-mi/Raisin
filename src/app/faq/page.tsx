@@ -46,16 +46,16 @@ export default function FAQPage() {
   ];
 
   return (
-    <div className="bg-[#FFFDF8] min-h-screen py-12">
+    <div className="bg-[#0B0B0A] min-h-screen py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-xs uppercase tracking-widest text-[#C9A052] font-semibold">
             Knowledge & Care
           </span>
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#1B1915] mt-1">
+          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#E2E8F0] mt-1">
             Frequently Asked Questions
           </h1>
-          <p className="text-xs sm:text-sm text-[#77736B] mt-2">
+          <p className="text-xs sm:text-sm text-[#94A3B8] mt-2">
             Everything you need to know regarding caring for your resin art, custom commissions, and white-glove shipping.
           </p>
         </div>
@@ -67,17 +67,17 @@ export default function FAQPage() {
             return (
               <div
                 key={idx}
-                className="bg-white border border-[#C9A052]/20 rounded-2xl overflow-hidden shadow-sm transition-all"
+                className="bg-[#161614] border border-[#C9A052]/20 rounded-2xl overflow-hidden shadow-sm transition-all"
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 hover:bg-[#FFFDF8] transition-colors"
+                  className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 hover:bg-[#0B0B0A] transition-colors"
                 >
                   <div>
                     <span className="text-[10px] uppercase tracking-wider font-semibold text-[#C9A052] block mb-1">
                       {faq.category}
                     </span>
-                    <h3 className="font-serif text-base sm:text-lg font-bold text-[#1B1915]">
+                    <h3 className="font-serif text-base sm:text-lg font-bold text-[#E2E8F0]">
                       {faq.q}
                     </h3>
                   </div>
@@ -89,7 +89,7 @@ export default function FAQPage() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-[#77736B] leading-relaxed border-t border-[#F4EFE5] animate-in fade-in duration-200">
+                  <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-[#94A3B8] leading-relaxed border-t border-[#C9A052]/20 animate-in fade-in duration-200">
                     {faq.a}
                   </div>
                 )}
@@ -99,18 +99,18 @@ export default function FAQPage() {
         </div>
 
         {/* Still have questions */}
-        <div className="bg-[#1B1915] text-[#FFFDF8] rounded-3xl p-8 sm:p-10 border border-[#C9A052]/30 text-center">
+        <div className="bg-[#121210] text-[#FFFDF8] rounded-3xl p-8 sm:p-10 border border-[#C9A052]/30 text-center">
           <HelpCircle className="w-8 h-8 text-[#C9A052] mx-auto mb-3" />
           <h3 className="font-serif text-2xl font-bold text-[#E5C77F] mb-2">
             Have a Specific Dimension or Color in Mind?
           </h3>
-          <p className="text-xs text-[#A69A86] max-w-md mx-auto mb-6 leading-relaxed">
+          <p className="text-xs text-[#CBD5E1] max-w-md mx-auto mb-6 leading-relaxed">
             Our atelier artisans are available to answer queries, review room photos, or schedule a virtual consultation.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/book-consultation"
-              className="bg-[#C9A052] text-[#121210] font-semibold text-xs uppercase tracking-widest px-6 py-3 rounded-xl hover:bg-[#E5C77F] transition-colors"
+              className="bg-[#C9A052] text-[#0B0B0A] font-semibold text-xs uppercase tracking-widest px-6 py-3 rounded-xl hover:bg-[#E5C77F] transition-colors"
             >
               Book Art Consultation
             </Link>

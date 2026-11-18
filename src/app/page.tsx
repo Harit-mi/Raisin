@@ -113,7 +113,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/shop"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#C9A052] text-[#121210] font-semibold text-xs uppercase tracking-widest hover:bg-[#E5C77F] transition-all duration-300 shadow-xl shadow-[#C9A052]/20 flex items-center justify-center gap-2 group"
+              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#C9A052] text-[#0B0B0A] font-semibold text-xs uppercase tracking-widest hover:bg-[#E5C77F] transition-all duration-300 shadow-xl shadow-[#C9A052]/20 flex items-center justify-center gap-2 group"
             >
               <span>Explore the Collection</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -121,7 +121,7 @@ export default function HomePage() {
 
             <Link
               href="/custom-studio"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#1B1915]/80 hover:bg-[#1B1915] text-[#E5C77F] border border-[#C9A052]/50 font-semibold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#121210]/80 hover:bg-[#121210] text-[#E5C77F] border border-[#C9A052]/50 font-semibold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2"
             >
               <Sliders className="w-4 h-4 text-[#C9A052]" />
               <span>Create Your Custom Piece</span>
@@ -132,26 +132,26 @@ export default function HomePage() {
           <div className="mt-16 pt-8 border-t border-[#C9A052]/20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto text-center">
             <div>
               <div className="font-serif text-2xl font-bold text-[#E5C77F]">1,200+</div>
-              <div className="text-[11px] text-[#A69A86] tracking-wider uppercase mt-1">Spaces Transformed</div>
+              <div className="text-[11px] text-[#CBD5E1] tracking-wider uppercase mt-1">Spaces Transformed</div>
             </div>
             <div>
               <div className="font-serif text-2xl font-bold text-[#E5C77F]">100%</div>
-              <div className="text-[11px] text-[#A69A86] tracking-wider uppercase mt-1">Hand-Poured Resin</div>
+              <div className="text-[11px] text-[#CBD5E1] tracking-wider uppercase mt-1">Hand-Poured Resin</div>
             </div>
             <div>
               <div className="font-serif text-2xl font-bold text-[#E5C77F]">4.9 / 5</div>
-              <div className="text-[11px] text-[#A69A86] tracking-wider uppercase mt-1">Artisan Reviews</div>
+              <div className="text-[11px] text-[#CBD5E1] tracking-wider uppercase mt-1">Artisan Reviews</div>
             </div>
             <div>
               <div className="font-serif text-2xl font-bold text-[#E5C77F]">Pan-India</div>
-              <div className="text-[11px] text-[#A69A86] tracking-wider uppercase mt-1">Crated White-Glove</div>
+              <div className="text-[11px] text-[#CBD5E1] tracking-wider uppercase mt-1">Crated White-Glove</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* 2. TRUST & VALUE SECTION */}
-      <section className="bg-[#FFFDF8] py-14 border-b border-[#F4EFE5]">
+      <section className="bg-[#0B0B0A] py-14 border-b border-[#C9A052]/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {trustPillars.map((pillar, i) => {
@@ -159,16 +159,16 @@ export default function HomePage() {
               return (
                 <div
                   key={i}
-                  className="flex items-start gap-4 p-5 rounded-2xl bg-white border border-[#C9A052]/15 hover:border-[#C9A052]/40 transition-colors shadow-sm"
+                  className="flex items-start gap-4 p-5 rounded-2xl bg-[#161614] border border-[#C9A052]/15 hover:border-[#C9A052]/40 transition-colors shadow-sm"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#F4EFE5] border border-[#C9A052]/30 flex items-center justify-center flex-shrink-0 text-[#C9A052]">
+                  <div className="w-12 h-12 rounded-xl bg-[#161614] border border-[#C9A052]/30 flex items-center justify-center flex-shrink-0 text-[#C9A052]">
                     <Icon className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="font-serif text-base font-semibold text-[#1B1915] mb-1">
+                    <h3 className="font-serif text-base font-semibold text-[#E2E8F0] mb-1">
                       {pillar.title}
                     </h3>
-                    <p className="text-xs text-[#77736B] leading-relaxed">
+                    <p className="text-xs text-[#94A3B8] leading-relaxed">
                       {pillar.desc}
                     </p>
                   </div>
@@ -180,20 +180,20 @@ export default function HomePage() {
       </section>
 
       {/* 3. FEATURED COLLECTIONS */}
-      <section id="collections" className="py-20 bg-[#F4EFE5]/50">
+      <section id="collections" className="py-20 bg-[#161614]/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
               <span className="text-xs uppercase tracking-widest text-[#C9A052] font-semibold">
                 Curated Categories
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#1B1915] mt-1">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#E2E8F0] mt-1">
                 Explore Signature Collections
               </h2>
             </div>
             <Link
               href="/shop"
-              className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-semibold text-[#1B1915] hover:text-[#C9A052] transition-colors"
+              className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-semibold text-[#E2E8F0] hover:text-[#C9A052] transition-colors"
             >
               <span>View All Collections</span>
               <ArrowRight className="w-4 h-4" />
@@ -238,16 +238,16 @@ export default function HomePage() {
       </section>
 
       {/* 4. FEATURED PRODUCTS GRID */}
-      <section className="py-20 bg-[#FFFDF8]">
+      <section className="py-20 bg-[#0B0B0A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-xs uppercase tracking-widest text-[#C9A052] font-semibold">
               Bestselling Creations
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#1B1915] mt-1">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#E2E8F0] mt-1">
               Hand-Poured Masterpieces
             </h2>
-            <p className="text-sm text-[#77736B] mt-2">
+            <p className="text-sm text-[#94A3B8] mt-2">
               Each piece represents days of careful pigment mixing, crystal placement, and optical resin curing.
             </p>
           </div>
@@ -261,7 +261,7 @@ export default function HomePage() {
           <div className="mt-14 text-center">
             <Link
               href="/shop"
-              className="inline-flex items-center gap-2 bg-[#1B1915] text-[#E5C77F] hover:bg-[#C9A052] hover:text-[#121210] font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-xl transition-all shadow-md"
+              className="inline-flex items-center gap-2 bg-[#121210] text-[#E5C77F] hover:bg-[#C9A052] hover:text-[#0B0B0A] font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-xl transition-all shadow-md"
             >
               <span>View All Products</span>
               <ArrowRight className="w-4 h-4" />
@@ -271,7 +271,7 @@ export default function HomePage() {
       </section>
 
       {/* 5. BRAND STORY SECTION */}
-      <section className="py-20 bg-[#1B1915] text-[#FFFDF8] relative overflow-hidden">
+      <section className="py-20 bg-[#121210] text-[#FFFDF8] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Visual Mosaic */}
@@ -288,7 +288,7 @@ export default function HomePage() {
                 <p className="text-xs text-[#E5C77F] font-serif italic">
                   &ldquo;Resin is alive during the pour. Controlling the viscosity, thermal cure, and light dispersion requires both scientific precision and artistic surrender.&rdquo;
                 </p>
-                <span className="block text-[11px] uppercase tracking-wider text-[#A69A86] mt-2">
+                <span className="block text-[11px] uppercase tracking-wider text-[#CBD5E1] mt-2">
                   — Lead Artisan & Founder, DRL Atelier
                 </span>
               </div>
@@ -297,7 +297,7 @@ export default function HomePage() {
             {/* Storytelling Text */}
             <div className="flex flex-col justify-center">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 relative rounded-full overflow-hidden border-2 border-[#C9A052]/60 shadow-xl flex-shrink-0 bg-[#FFFDF8]">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 relative rounded-full overflow-hidden border-2 border-[#C9A052]/60 shadow-xl flex-shrink-0 bg-[#0B0B0A]">
                   <Image
                     src="/images/logo.jpg"
                     alt="DRL Resin & Décor Master Emblem"
@@ -332,7 +332,7 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-4 items-center">
                 <Link
                   href="/about"
-                  className="bg-[#C9A052] text-[#121210] font-semibold text-xs uppercase tracking-widest px-7 py-3.5 rounded-xl hover:bg-[#E5C77F] transition-colors"
+                  className="bg-[#C9A052] text-[#0B0B0A] font-semibold text-xs uppercase tracking-widest px-7 py-3.5 rounded-xl hover:bg-[#E5C77F] transition-colors"
                 >
                   Discover Our Story
                 </Link>
@@ -349,7 +349,7 @@ export default function HomePage() {
       </section>
 
       {/* 6. CUSTOMIZATION STUDIO BANNER */}
-      <section className="py-20 bg-[#FFFDF8] relative">
+      <section className="py-20 bg-[#0B0B0A] relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-3xl bg-gradient-to-r from-[#1B1915] via-[#121210] to-[#1B1915] text-[#FFFDF8] p-8 sm:p-14 lg:p-16 border border-[#C9A052]/30 shadow-2xl overflow-hidden">
             {/* Background Texture */}
@@ -377,7 +377,7 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/custom-studio"
-                  className="bg-[#C9A052] text-[#121210] font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-xl hover:bg-[#E5C77F] transition-all flex items-center justify-center gap-2"
+                  className="bg-[#C9A052] text-[#0B0B0A] font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-xl hover:bg-[#E5C77F] transition-all flex items-center justify-center gap-2"
                 >
                   <Sliders className="w-4 h-4" />
                   <span>Launch Custom Studio</span>
@@ -396,16 +396,16 @@ export default function HomePage() {
       </section>
 
       {/* 7. TESTIMONIALS SECTION */}
-      <section className="py-20 bg-[#F4EFE5]/40 border-t border-[#F4EFE5]">
+      <section className="py-20 bg-[#161614]/40 border-t border-[#C9A052]/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-xs uppercase tracking-widest text-[#C9A052] font-semibold">
               Verified Patron Stories
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#1B1915] mt-1">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#E2E8F0] mt-1">
               Treasured in Discerning Homes
             </h2>
-            <p className="text-sm text-[#77736B] mt-2">
+            <p className="text-sm text-[#94A3B8] mt-2">
               Read authentic feedback from collectors and clients across India who welcomed DRL pieces into their residences.
             </p>
           </div>
@@ -414,7 +414,7 @@ export default function HomePage() {
             {testimonials.map((t, idx) => (
               <div
                 key={idx}
-                className="bg-white p-8 rounded-2xl border border-[#C9A052]/20 shadow-sm flex flex-col justify-between"
+                className="bg-[#161614] p-8 rounded-2xl border border-[#C9A052]/20 shadow-sm flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -425,19 +425,19 @@ export default function HomePage() {
                     </div>
                     <Quote className="w-6 h-6 text-[#C9A052]/30" />
                   </div>
-                  <p className="text-xs sm:text-sm text-[#1B1915] leading-relaxed italic mb-6">
+                  <p className="text-xs sm:text-sm text-[#E2E8F0] leading-relaxed italic mb-6">
                     &ldquo;{t.quote}&rdquo;
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-[#F4EFE5]">
-                  <div className="font-serif font-bold text-sm text-[#1B1915]">
+                <div className="pt-4 border-t border-[#C9A052]/20">
+                  <div className="font-serif font-bold text-sm text-[#E2E8F0]">
                     {t.name}
                   </div>
                   <div className="text-[11px] text-[#C9A052] font-medium">
                     {t.product}
                   </div>
-                  <div className="text-[10px] text-[#A69A86] mt-0.5">
+                  <div className="text-[10px] text-[#CBD5E1] mt-0.5">
                     {t.city} · {t.date}
                   </div>
                 </div>
@@ -454,12 +454,12 @@ export default function HomePage() {
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#E5C77F] mb-3">
             Looking for a Bespoke Architectural Installation?
           </h2>
-          <p className="text-sm text-[#A69A86] max-w-xl mx-auto mb-8 leading-relaxed">
+          <p className="text-sm text-[#CBD5E1] max-w-xl mx-auto mb-8 leading-relaxed">
             Schedule a 1-on-1 design consultation with our master artisan to select wood grain slabs, resin pigments, and coordinate with your architect.
           </p>
           <Link
             href="/book-consultation"
-            className="inline-flex items-center gap-2 bg-[#C9A052] text-[#121210] font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-xl hover:bg-[#E5C77F] transition-colors"
+            className="inline-flex items-center gap-2 bg-[#C9A052] text-[#0B0B0A] font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-xl hover:bg-[#E5C77F] transition-colors"
           >
             <CalendarCheck className="w-4 h-4" />
             <span>Schedule 1-on-1 Consultation</span>

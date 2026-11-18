@@ -108,23 +108,23 @@ function ShopContent() {
   };
 
   return (
-    <div className="bg-[#FFFDF8] min-h-screen py-10">
+    <div className="bg-[#0B0B0A] min-h-screen py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page Header */}
-        <div className="border-b border-[#F4EFE5] pb-8 mb-8 text-center max-w-2xl mx-auto">
+        <div className="border-b border-[#C9A052]/20 pb-8 mb-8 text-center max-w-2xl mx-auto">
           <span className="text-xs uppercase tracking-widest text-[#C9A052] font-semibold">
             Atelier Catalog
           </span>
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#1B1915] mt-1">
+          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#E2E8F0] mt-1">
             Handcrafted Collection
           </h1>
-          <p className="text-sm text-[#77736B] mt-2">
+          <p className="text-sm text-[#94A3B8] mt-2">
             Explore original hand-poured ocean resin wall art, statement tables, crystal geode clocks, and bespoke functional decor.
           </p>
         </div>
 
         {/* Filter & Search Bar */}
-        <div className="bg-white border border-[#C9A052]/20 rounded-2xl p-4 sm:p-6 mb-10 shadow-sm">
+        <div className="bg-[#161614] border border-[#C9A052]/20 rounded-2xl p-4 sm:p-6 mb-10 shadow-sm">
           {/* Top row: search + sort */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
             <div className="relative w-full sm:w-80">
@@ -133,13 +133,13 @@ function ShopContent() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search art, clocks, tables..."
-                className="w-full bg-[#FFFDF8] border border-[#A69A86]/30 rounded-xl px-4 py-2.5 pl-10 text-xs text-[#1B1915] placeholder-[#77736B] focus:outline-none focus:border-[#C9A052]"
+                className="w-full bg-[#0B0B0A] border border-[#A69A86]/30 rounded-xl px-4 py-2.5 pl-10 text-xs text-[#E2E8F0] placeholder-[#77736B] focus:outline-none focus:border-[#C9A052]"
               />
-              <Search className="w-4 h-4 text-[#A69A86] absolute left-3 top-3" />
+              <Search className="w-4 h-4 text-[#CBD5E1] absolute left-3 top-3" />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-3 top-2.5 text-xs text-[#77736B] hover:text-[#1B1915]"
+                  className="absolute right-3 top-2.5 text-xs text-[#94A3B8] hover:text-[#E2E8F0]"
                 >
                   Clear
                 </button>
@@ -147,11 +147,11 @@ function ShopContent() {
             </div>
 
             <div className="flex items-center gap-3 w-full sm:w-auto justify-end">
-              <span className="text-xs text-[#77736B] font-medium whitespace-nowrap">Sort by:</span>
+              <span className="text-xs text-[#94A3B8] font-medium whitespace-nowrap">Sort by:</span>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as "featured" | "price-asc" | "price-desc" | "newest")}
-                className="bg-[#FFFDF8] border border-[#A69A86]/30 rounded-xl px-3 py-2 text-xs text-[#1B1915] focus:outline-none focus:border-[#C9A052] cursor-pointer"
+                className="bg-[#0B0B0A] border border-[#A69A86]/30 rounded-xl px-3 py-2 text-xs text-[#E2E8F0] focus:outline-none focus:border-[#C9A052] cursor-pointer"
               >
                 <option value="featured">Featured Curations</option>
                 <option value="price-asc">Price: Low to High</option>
@@ -162,15 +162,15 @@ function ShopContent() {
           </div>
 
           {/* Category Tabs */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none border-b border-[#F4EFE5] mb-5">
+          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none border-b border-[#C9A052]/20 mb-5">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 className={`text-xs uppercase tracking-wider px-4 py-2 rounded-xl whitespace-nowrap font-medium transition-all ${
                   selectedCategory === cat
-                    ? "bg-[#1B1915] text-[#E5C77F] shadow-sm font-semibold"
-                    : "bg-[#F4EFE5]/60 text-[#1B1915] hover:bg-[#F4EFE5]"
+                    ? "bg-[#121210] text-[#E5C77F] shadow-sm font-semibold"
+                    : "bg-[#161614]/60 text-[#E2E8F0] hover:bg-[#161614]"
                 }`}
               >
                 {cat}
@@ -181,7 +181,7 @@ function ShopContent() {
           {/* Refine Options & Price Slider */}
           <div className="flex flex-wrap items-center justify-between gap-4 pt-2 text-xs">
             <div className="flex flex-wrap items-center gap-4">
-              <label className="flex items-center gap-2 cursor-pointer text-[#1B1915]">
+              <label className="flex items-center gap-2 cursor-pointer text-[#E2E8F0]">
                 <input
                   type="checkbox"
                   checked={filterReadyToShip}
@@ -191,7 +191,7 @@ function ShopContent() {
                 <span>Ready to Ship</span>
               </label>
 
-              <label className="flex items-center gap-2 cursor-pointer text-[#1B1915]">
+              <label className="flex items-center gap-2 cursor-pointer text-[#E2E8F0]">
                 <input
                   type="checkbox"
                   checked={filterMadeToOrder}
@@ -201,7 +201,7 @@ function ShopContent() {
                 <span>Made to Order</span>
               </label>
 
-              <label className="flex items-center gap-2 cursor-pointer text-[#1B1915]">
+              <label className="flex items-center gap-2 cursor-pointer text-[#E2E8F0]">
                 <input
                   type="checkbox"
                   checked={filterCustomizable}
@@ -213,7 +213,7 @@ function ShopContent() {
             </div>
 
             <div className="flex items-center gap-3">
-              <span className="text-[#77736B]">Max: ₹{maxPrice.toLocaleString("en-IN")}</span>
+              <span className="text-[#94A3B8]">Max: ₹{maxPrice.toLocaleString("en-IN")}</span>
               <input
                 type="range"
                 min="1500"
@@ -231,7 +231,7 @@ function ShopContent() {
                 maxPrice < 50000) && (
                 <button
                   onClick={resetFilters}
-                  className="flex items-center gap-1 text-[#C9A052] hover:text-[#1B1915] transition-colors ml-2 font-medium"
+                  className="flex items-center gap-1 text-[#C9A052] hover:text-[#E2E8F0] transition-colors ml-2 font-medium"
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
                   <span>Reset</span>
@@ -242,9 +242,9 @@ function ShopContent() {
         </div>
 
         {/* Product Count Status */}
-        <div className="flex items-center justify-between mb-6 text-xs text-[#77736B]">
+        <div className="flex items-center justify-between mb-6 text-xs text-[#94A3B8]">
           <span>
-            Showing <strong className="text-[#1B1915]">{filteredProducts.length}</strong> creations
+            Showing <strong className="text-[#E2E8F0]">{filteredProducts.length}</strong> creations
           </span>
           <span className="italic">All prices in Indian Rupees (₹ INR)</span>
         </div>
@@ -253,25 +253,25 @@ function ShopContent() {
         {loading ? (
           <div className="py-24 text-center">
             <Sparkles className="w-8 h-8 text-[#C9A052] animate-spin mx-auto mb-3" />
-            <p className="font-serif text-lg text-[#1B1915]">Loading the collection...</p>
+            <p className="font-serif text-lg text-[#E2E8F0]">Loading the collection...</p>
           </div>
         ) : filteredProducts.length === 0 ? (
-          <div className="bg-white border border-[#C9A052]/20 rounded-3xl p-12 text-center max-w-lg mx-auto shadow-sm">
-            <SlidersHorizontal className="w-10 h-10 text-[#A69A86] mx-auto mb-3" />
-            <h3 className="font-serif text-xl font-bold text-[#1B1915] mb-2">No creations matched</h3>
-            <p className="text-xs text-[#77736B] mb-6 leading-relaxed">
+          <div className="bg-[#161614] border border-[#C9A052]/20 rounded-3xl p-12 text-center max-w-lg mx-auto shadow-sm">
+            <SlidersHorizontal className="w-10 h-10 text-[#CBD5E1] mx-auto mb-3" />
+            <h3 className="font-serif text-xl font-bold text-[#E2E8F0] mb-2">No creations matched</h3>
+            <p className="text-xs text-[#94A3B8] mb-6 leading-relaxed">
               We couldn&apos;t find items matching your active filter criteria. Try adjusting the price slider, clearing filters, or requesting a custom commission.
             </p>
             <div className="flex items-center justify-center gap-3">
               <button
                 onClick={resetFilters}
-                className="bg-[#1B1915] text-[#E5C77F] px-5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider"
+                className="bg-[#121210] text-[#E5C77F] px-5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider"
               >
                 Reset All Filters
               </button>
               <Link
                 href="/custom-studio"
-                className="border border-[#C9A052] text-[#1B1915] px-5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider hover:bg-[#F4EFE5]"
+                className="border border-[#C9A052] text-[#E2E8F0] px-5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider hover:bg-[#161614]"
               >
                 Commission Custom
               </Link>
@@ -293,8 +293,8 @@ export default function ShopPage() {
   return (
     <Suspense
       fallback={
-        <div className="py-24 text-center bg-[#FFFDF8]">
-          <p className="font-serif text-lg text-[#1B1915]">Loading Atelier Collection...</p>
+        <div className="py-24 text-center bg-[#0B0B0A]">
+          <p className="font-serif text-lg text-[#E2E8F0]">Loading Atelier Collection...</p>
         </div>
       }
     >

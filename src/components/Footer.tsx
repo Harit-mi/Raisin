@@ -44,7 +44,7 @@ export function Footer() {
           {/* Brand Col */}
           <div className="lg:col-span-2">
             <Logo theme="dark" size="lg" />
-            <p className="mt-4 text-sm text-[#A69A86] max-w-sm leading-relaxed">
+            <p className="mt-4 text-sm text-[#CBD5E1] max-w-sm leading-relaxed">
               DRL Resin & Décor transforms raw timber, crystal minerals, and optical resin into timeless artistic statements. Each piece is hand-poured in our artisan atelier with boundless passion and precision.
             </p>
             <div className="mt-6 flex items-center gap-3">
@@ -54,12 +54,12 @@ export function Footer() {
               </span>
             </div>
             {/* Social Icons */}
-            <div className="mt-6 flex items-center gap-3 text-[#A69A86]">
+            <div className="mt-6 flex items-center gap-3 text-[#CBD5E1]">
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-[#1B1915] border border-[#C9A052]/20 flex items-center justify-center hover:text-[#E5C77F] hover:border-[#C9A052] transition-colors"
+                className="w-9 h-9 rounded-full bg-[#121210] border border-[#C9A052]/20 flex items-center justify-center hover:text-[#E5C77F] hover:border-[#C9A052] transition-colors"
                 aria-label="Instagram"
               >
                 <svg width="16" height="16" className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -70,7 +70,7 @@ export function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-[#1B1915] border border-[#C9A052]/20 flex items-center justify-center hover:text-[#E5C77F] hover:border-[#C9A052] transition-colors"
+                className="w-9 h-9 rounded-full bg-[#121210] border border-[#C9A052]/20 flex items-center justify-center hover:text-[#E5C77F] hover:border-[#C9A052] transition-colors"
                 aria-label="Facebook"
               >
                 <svg width="16" height="16" className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -81,7 +81,7 @@ export function Footer() {
                 href="https://wa.me/919876543210"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-[#1B1915] border border-[#C9A052]/20 flex items-center justify-center hover:text-[#E5C77F] hover:border-[#C9A052] transition-colors"
+                className="w-9 h-9 rounded-full bg-[#121210] border border-[#C9A052]/20 flex items-center justify-center hover:text-[#E5C77F] hover:border-[#C9A052] transition-colors"
                 aria-label="WhatsApp Concierge"
               >
                 <Phone className="w-4 h-4" />
@@ -94,7 +94,7 @@ export function Footer() {
             <h4 className="text-xs uppercase tracking-widest text-[#E5C77F] font-semibold mb-4">
               Artisan Collections
             </h4>
-            <ul className="space-y-2.5 text-sm text-[#A69A86]">
+            <ul className="space-y-2.5 text-sm text-[#CBD5E1]">
               <li>
                 <Link href="/shop?category=Resin+Wall+Art" className="hover:text-white transition-colors">
                   Ocean Wall Art
@@ -133,7 +133,7 @@ export function Footer() {
             <h4 className="text-xs uppercase tracking-widest text-[#E5C77F] font-semibold mb-4">
               Bespoke Services
             </h4>
-            <ul className="space-y-2.5 text-sm text-[#A69A86]">
+            <ul className="space-y-2.5 text-sm text-[#CBD5E1]">
               <li>
                 <Link href="/custom-studio" className="hover:text-[#E5C77F] font-medium transition-colors">
                   Custom Studio 3D
@@ -172,7 +172,7 @@ export function Footer() {
             <h4 className="text-xs uppercase tracking-widest text-[#E5C77F] font-semibold mb-4">
               Private Atelier Circle
             </h4>
-            <p className="text-xs text-[#A69A86] mb-3 leading-relaxed">
+            <p className="text-xs text-[#CBD5E1] mb-3 leading-relaxed">
               Receive previews of one-of-a-kind gallery pieces and invitations to seasonal commissions.
             </p>
 
@@ -184,12 +184,12 @@ export function Footer() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
                   required
-                  className="w-full bg-[#1B1915] border border-[#C9A052]/30 rounded-lg px-3 py-2.5 text-xs text-white placeholder-[#77736B] focus:outline-none focus:border-[#C9A052]"
+                  className="w-full bg-[#121210] border border-[#C9A052]/30 rounded-lg px-3 py-2.5 text-xs text-white placeholder-[#77736B] focus:outline-none focus:border-[#C9A052]"
                 />
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="absolute right-1 top-1 bg-[#C9A052] text-[#121210] p-1.5 rounded-md hover:bg-[#E5C77F] transition-colors disabled:opacity-50"
+                  className="absolute right-1 top-1 bg-[#C9A052] text-[#0B0B0A] p-1.5 rounded-md hover:bg-[#E5C77F] transition-colors disabled:opacity-50"
                   aria-label="Subscribe"
                 >
                   <Send className="w-3.5 h-3.5" />
@@ -205,7 +205,7 @@ export function Footer() {
               {status === "error" && <p className="text-xs text-rose-400">{message}</p>}
             </form>
 
-            <div className="mt-5 pt-4 border-t border-[#C9A052]/10 space-y-2 text-xs text-[#A69A86]">
+            <div className="mt-5 pt-4 border-t border-[#C9A052]/10 space-y-2 text-xs text-[#CBD5E1]">
               <div className="flex items-start gap-2">
                 <MapPin className="w-3.5 h-3.5 text-[#C9A052] mt-0.5 flex-shrink-0" />
                 <span>Atelier Studio: MG Road, Bengaluru & Jubilee Hills, Hyderabad (By Appointment)</span>
@@ -219,16 +219,16 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#77736B]">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#94A3B8]">
           <p>© 2026 DRL Resin & Décor. All rights reserved. Registered craft trademark.</p>
           <div className="flex flex-wrap items-center gap-5">
-            <Link href="/policies/privacy" className="hover:text-[#A69A86] transition-colors">
+            <Link href="/policies/privacy" className="hover:text-[#CBD5E1] transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/policies/terms" className="hover:text-[#A69A86] transition-colors">
+            <Link href="/policies/terms" className="hover:text-[#CBD5E1] transition-colors">
               Terms & Conditions
             </Link>
-            <Link href="/policies/shipping" className="hover:text-[#A69A86] transition-colors">
+            <Link href="/policies/shipping" className="hover:text-[#CBD5E1] transition-colors">
               Shipping
             </Link>
             <Link href="/admin" className="text-[#C9A052] hover:underline">

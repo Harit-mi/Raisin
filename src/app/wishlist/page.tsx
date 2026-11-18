@@ -32,16 +32,16 @@ export default function WishlistPage() {
   const wishlistedProducts = products.filter((p) => wishlist.includes(p.id));
 
   return (
-    <div className="bg-[#FFFDF8] min-h-screen py-12">
+    <div className="bg-[#0B0B0A] min-h-screen py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="border-b border-[#F4EFE5] pb-6 mb-10 text-center max-w-xl mx-auto">
+        <div className="border-b border-[#C9A052]/20 pb-6 mb-10 text-center max-w-xl mx-auto">
           <span className="text-xs uppercase tracking-widest text-[#C9A052] font-semibold">
             Saved Curations
           </span>
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-[#1B1915] mt-1">
+          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-[#E2E8F0] mt-1">
             Your Wishlist ({wishlistCount})
           </h1>
-          <p className="text-xs sm:text-sm text-[#77736B] mt-2">
+          <p className="text-xs sm:text-sm text-[#94A3B8] mt-2">
             Keep track of pieces you admire for upcoming home styling or gifting milestones.
           </p>
         </div>
@@ -51,17 +51,17 @@ export default function WishlistPage() {
             <Sparkles className="w-8 h-8 text-[#C9A052] animate-spin mx-auto mb-3" />
           </div>
         ) : wishlistedProducts.length === 0 ? (
-          <div className="bg-white border border-[#C9A052]/20 rounded-3xl p-12 text-center max-w-md mx-auto shadow-sm">
-            <div className="w-16 h-16 rounded-full bg-[#F4EFE5] flex items-center justify-center text-[#A69A86] mx-auto mb-4">
+          <div className="bg-[#161614] border border-[#C9A052]/20 rounded-3xl p-12 text-center max-w-md mx-auto shadow-sm">
+            <div className="w-16 h-16 rounded-full bg-[#161614] flex items-center justify-center text-[#CBD5E1] mx-auto mb-4">
               <Heart className="w-7 h-7" />
             </div>
-            <h3 className="font-serif text-xl font-bold text-[#1B1915] mb-2">No Saved Items</h3>
-            <p className="text-xs text-[#77736B] mb-6 leading-relaxed">
+            <h3 className="font-serif text-xl font-bold text-[#E2E8F0] mb-2">No Saved Items</h3>
+            <p className="text-xs text-[#94A3B8] mb-6 leading-relaxed">
               Click the heart icon on any ocean wall art piece, clock, or live edge table to bookmark it here.
             </p>
             <Link
               href="/shop"
-              className="bg-[#1B1915] text-[#E5C77F] px-6 py-3 rounded-xl text-xs uppercase tracking-widest font-semibold hover:bg-[#C9A052] hover:text-[#121210] transition-colors"
+              className="bg-[#121210] text-[#E5C77F] px-6 py-3 rounded-xl text-xs uppercase tracking-widest font-semibold hover:bg-[#C9A052] hover:text-[#0B0B0A] transition-colors"
             >
               Explore Collection
             </Link>
