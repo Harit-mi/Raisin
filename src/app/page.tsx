@@ -192,39 +192,47 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {categories.slice(0, 8).map((cat) => (
-              <Link
-                key={cat.id}
-                href={`/shop?category=${encodeURIComponent(cat.name)}`}
-                className="group relative h-96 rounded-2xl overflow-hidden shadow-md flex flex-col justify-end p-6 border border-[#C9A052]/20"
-              >
-                <Image
-                  src={cat.image}
-                  alt={cat.name}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  unoptimized
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#121210] via-[#121210]/50 to-transparent" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {categories
+              .filter((c) =>
+                [
+                  "Statement Wall Art",
+                  "Timeless Creations",
+                  "Luxe Living & Tableware",
+                ].includes(c.name)
+              )
+              .map((cat) => (
+                <Link
+                  key={cat.id}
+                  href={`/shop?category=${encodeURIComponent(cat.name)}`}
+                  className="group relative h-[420px] rounded-3xl overflow-hidden shadow-xl flex flex-col justify-end p-8 border border-[#C9A052]/30 hover:border-[#E5C77F] transition-all duration-500"
+                >
+                  <Image
+                    src={cat.image}
+                    alt={cat.name}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    unoptimized
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0A] via-[#0B0B0A]/60 to-transparent" />
 
-                <div className="relative z-10">
-                  <span className="text-[11px] font-semibold tracking-widest uppercase text-[#E5C77F]">
-                    {cat.itemCount} Creations
-                  </span>
-                  <h3 className="font-serif text-2xl font-bold text-white mt-1 group-hover:text-[#E5C77F] transition-colors">
-                    {cat.name}
-                  </h3>
-                  <p className="text-xs text-[#F4EFE5]/80 mt-1.5 line-clamp-2 leading-relaxed">
-                    {cat.description}
-                  </p>
-                  <div className="mt-4 inline-flex items-center gap-1 text-xs text-[#E5C77F] font-semibold uppercase tracking-wider group-hover:translate-x-1 transition-transform">
-                    <span>Discover</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                  <div className="relative z-10">
+                    <span className="text-xs font-semibold tracking-widest uppercase text-[#E5C77F] bg-[#0B0B0A]/80 border border-[#C9A052]/40 px-3 py-1 rounded-full w-fit inline-block mb-3">
+                      {cat.itemCount} Signature Pieces
+                    </span>
+                    <h3 className="font-serif text-3xl font-bold text-white group-hover:text-[#E5C77F] transition-colors">
+                      {cat.name}
+                    </h3>
+                    <p className="text-xs text-[#CBD5E1] mt-2 leading-relaxed">
+                      {cat.description}
+                    </p>
+                    <div className="mt-5 inline-flex items-center gap-1.5 text-xs text-[#E5C77F] font-bold uppercase tracking-wider group-hover:translate-x-1.5 transition-transform">
+                      <span>Explore Collection</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </div>
                   </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              ))}
           </div>
         </div>
       </section>
