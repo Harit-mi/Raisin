@@ -112,10 +112,10 @@ export default function HomePage() {
 
           <div className="flex items-center justify-center">
             <Link
-              href="/shop"
+              href="/collections"
               className="w-full sm:w-auto px-10 py-4 rounded-xl bg-[#C9A052] text-[#0B0B0A] font-semibold text-xs uppercase tracking-widest hover:bg-[#E5C77F] transition-all duration-300 shadow-xl shadow-[#C9A052]/20 flex items-center justify-center gap-2 group"
             >
-              <span>Explore the Collection</span>
+              <span>Explore The Collections</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
@@ -187,10 +187,10 @@ export default function HomePage() {
               </p>
             </div>
             <Link
-              href="/shop?tier=Signature+Collections"
+              href="/collections/signature-collections"
               className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-semibold text-[#E5C77F] hover:text-[#FFFDF8] transition-colors"
             >
-              <span>Explore Signature Tier</span>
+              <span>Explore Signature Collection</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -205,7 +205,7 @@ export default function HomePage() {
               .map((cat) => (
                 <Link
                   key={cat.id}
-                  href={`/shop?category=${encodeURIComponent(cat.name)}`}
+                  href={`/collections/signature-collections/${cat.slug}`}
                   className="group relative h-[420px] rounded-3xl overflow-hidden shadow-xl flex flex-col justify-end p-8 border border-[#C9A052]/30 hover:border-[#E5C77F] transition-all duration-500 bg-[#121210]"
                 >
                   <Image
@@ -254,10 +254,10 @@ export default function HomePage() {
               </p>
             </div>
             <Link
-              href="/shop?tier=Hand-Poured+Masterpieces"
+              href="/collections/hand-poured-masterpieces"
               className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-semibold text-[#E5C77F] hover:text-[#FFFDF8] transition-colors"
             >
-              <span>Explore Masterpieces Tier</span>
+              <span>Explore Masterpieces Collection</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -272,7 +272,7 @@ export default function HomePage() {
               .map((cat) => (
                 <Link
                   key={cat.id}
-                  href={`/shop?category=${encodeURIComponent(cat.name)}`}
+                  href={`/collections/hand-poured-masterpieces/${cat.slug}`}
                   className="group relative h-[380px] rounded-3xl overflow-hidden shadow-lg flex flex-col justify-end p-8 border border-[#C9A052]/25 hover:border-[#E5C77F] transition-all duration-500 bg-[#161614]"
                 >
                   <Image
@@ -321,10 +321,10 @@ export default function HomePage() {
               </p>
             </div>
             <Link
-              href="/shop?tier=Gift+Articles"
+              href="/collections/gift-articles"
               className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-semibold text-[#E5C77F] hover:text-[#FFFDF8] transition-colors"
             >
-              <span>Explore Gift Articles Tier</span>
+              <span>Explore Gift Articles Collection</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -338,7 +338,7 @@ export default function HomePage() {
               .map((cat) => (
                 <Link
                   key={cat.id}
-                  href={`/shop?category=${encodeURIComponent(cat.name)}`}
+                  href={`/collections/gift-articles/${cat.slug}`}
                   className="group relative h-[360px] rounded-3xl overflow-hidden shadow-lg flex flex-col justify-end p-8 border border-[#C9A052]/25 hover:border-[#E5C77F] transition-all duration-500 bg-[#161614]"
                 >
                   <Image
@@ -371,10 +371,10 @@ export default function HomePage() {
 
           <div className="mt-14 text-center">
             <Link
-              href="/shop"
+              href="/collections"
               className="inline-flex items-center gap-2 bg-[#161614] border border-[#C9A052]/40 text-[#E5C77F] hover:bg-[#C9A052] hover:text-[#0B0B0A] font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-xl transition-all shadow-md"
             >
-              <span>View All 3 Tiers & 8 Categories</span>
+              <span>View All 3 Collections & 8 Categories</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

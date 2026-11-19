@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "./Logo";
 import { useCart } from "@/lib/cart-context";
+import { CATALOG_TIERS } from "@/lib/catalog";
 import {
   ShoppingBag,
   Heart,
@@ -15,6 +16,9 @@ import {
   Sparkles,
   PhoneCall,
   ArrowRight,
+  ChevronDown,
+  Clock,
+  ShieldCheck,
 } from "lucide-react";
 
 export function Header() {
@@ -24,6 +28,12 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [collectionsMegaOpen, setCollectionsMegaOpen] = useState(false);
+  const [mobileCollectionsExpanded, setMobileCollectionsExpanded] = useState(true);
+  const [mobileActiveTier, setMobileActiveTier] = useState<string | null>("Signature Collections");
+
+  const megaMenuTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   const [announcementText] = useState(
     "Handcrafted with intention · Free insured white-glove shipping on orders above ₹3,000"
   );
@@ -36,17 +46,23 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on page change
+  // Close menus on page change
   useEffect(() => {
     setMobileMenuOpen(false);
     setSearchOpen(false);
+    setCollectionsMegaOpen(false);
   }, [pathname]);
 
-  const navLinks: { label: string; href: string; highlight?: boolean }[] = [
-    { label: "Home", href: "/" },
-    { label: "Collections", href: "/shop" },
-    { label: "Contact", href: "/contact" },
-  ];
+  const handleMouseEnterCollections = () => {
+    if (megaMenuTimeoutRef.current) clearTimeout(megaMenuTimeoutRef.current);
+    setCollectionsMegaOpen(true);
+  };
+
+  const handleMouseLeaveCollections = () => {
+    megaMenuTimeoutRef.current = setTimeout(() => {
+      setCollectionsMegaOpen(false);
+    }, 200);
+  };
 
   return (
     <>
@@ -83,27 +99,179 @@ export function Header() {
             <Logo theme="dark" size="md" />
           </div>
 
-          {/* Desktop Navigation Links */}
+          {/* Desktop Navigation Links with Collections Dropdown */}
           <nav className="hidden lg:flex items-center gap-9">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`font-serif italic text-base sm:text-lg tracking-wide transition-all relative py-1 ${
-                    isActive
-                      ? "text-[#E5C77F] font-medium"
-                      : "text-[#E2E8F0]/80 hover:text-[#E5C77F]"
+            <Link
+              href="/"
+              className={`font-serif italic text-base sm:text-lg tracking-wide transition-all relative py-1 ${
+                pathname === "/"
+                  ? "text-[#E5C77F] font-medium"
+                  : "text-[#E2E8F0]/80 hover:text-[#E5C77F]"
+              }`}
+            >
+              Home
+              {pathname === "/" && (
+                <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#C9A052]" />
+              )}
+            </Link>
+
+            {/* Interactive Collections Dropdown Trigger */}
+            <div
+              className="relative py-1"
+              onMouseEnter={handleMouseEnterCollections}
+              onMouseLeave={handleMouseLeaveCollections}
+            >
+              <button
+                onClick={() => setCollectionsMegaOpen(!collectionsMegaOpen)}
+                className={`font-serif italic text-base sm:text-lg tracking-wide transition-all flex items-center gap-1.5 ${
+                  pathname.startsWith("/collections") || collectionsMegaOpen
+                    ? "text-[#E5C77F] font-medium"
+                    : "text-[#E2E8F0]/80 hover:text-[#E5C77F]"
+                }`}
+                aria-expanded={collectionsMegaOpen}
+              >
+                <span>Collections</span>
+                <ChevronDown
+                  className={`w-4 h-4 text-[#C9A052] transition-transform duration-300 ${
+                    collectionsMegaOpen ? "rotate-180" : ""
                   }`}
+                />
+                {pathname.startsWith("/collections") && (
+                  <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#C9A052]" />
+                )}
+              </button>
+
+              {/* Luxury Mega Menu Panel */}
+              {collectionsMegaOpen && (
+                <div
+                  className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[920px] max-w-[94vw] z-50 animate-in fade-in slide-in-from-top-2 duration-300"
+                  onMouseEnter={handleMouseEnterCollections}
+                  onMouseLeave={handleMouseLeaveCollections}
                 >
-                  {link.label}
-                  {isActive && (
-                    <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#C9A052]" />
-                  )}
-                </Link>
-              );
-            })}
+                  <div className="bg-[#0E0E0C] border border-[#C9A052]/35 rounded-3xl p-8 shadow-2xl shadow-black/80 backdrop-blur-xl relative overflow-hidden">
+                    {/* Subtle Gold Foil Accent Gradient */}
+                    <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#C9A052] to-transparent" />
+
+                    <div className="flex items-center justify-between pb-5 border-b border-[#C9A052]/20 mb-6">
+                      <div>
+                        <span className="text-[11px] uppercase tracking-widest text-[#C9A052] font-semibold">
+                          Atelier Catalog
+                        </span>
+                        <h3 className="font-serif text-2xl font-bold text-[#FFFDF8] mt-0.5">
+                          Explore Handcrafted Collections
+                        </h3>
+                      </div>
+                      <Link
+                        href="/collections"
+                        onClick={() => setCollectionsMegaOpen(false)}
+                        className="text-xs uppercase tracking-wider text-[#E5C77F] hover:text-[#FFFDF8] font-semibold inline-flex items-center gap-1.5 transition-colors group/view"
+                      >
+                        <span>View All Collections Hub</span>
+                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/view:translate-x-1" />
+                      </Link>
+                    </div>
+
+                    {/* 3 Collection Columns */}
+                    <div className="grid grid-cols-3 gap-8">
+                      {CATALOG_TIERS.map((tier) => (
+                        <div
+                          key={tier.slug}
+                          className="flex flex-col justify-between p-5 rounded-2xl bg-[#141411] border border-[#C9A052]/20 hover:border-[#E5C77F]/60 transition-all duration-300 group/col"
+                        >
+                          <div>
+                            {/* Column Header */}
+                            <div className="flex items-center gap-2 mb-2">
+                              <span className="text-[11px] font-mono font-bold text-[#C9A052]">
+                                {tier.number}
+                              </span>
+                              <span className="w-4 h-[1px] bg-[#C9A052]/40" />
+                              <span className="text-[10px] uppercase tracking-widest text-[#94A3B8]">
+                                {tier.categories.length} Categories
+                              </span>
+                            </div>
+
+                            <Link
+                              href={`/collections/${tier.slug}`}
+                              onClick={() => setCollectionsMegaOpen(false)}
+                              className="font-serif text-lg font-bold text-[#FFFDF8] group-hover/col:text-[#E5C77F] transition-colors block"
+                            >
+                              {tier.name}
+                            </Link>
+
+                            <p className="text-[11px] text-[#94A3B8] mt-1 line-clamp-2 leading-relaxed font-light">
+                              {tier.tagline}
+                            </p>
+
+                            {/* Subcategories List */}
+                            <div className="mt-5 space-y-3 pt-4 border-t border-[#C9A052]/15">
+                              {tier.categories.map((cat) => (
+                                <Link
+                                  key={cat.slug}
+                                  href={`/collections/${tier.slug}/${cat.slug}`}
+                                  onClick={() => setCollectionsMegaOpen(false)}
+                                  className="group/item block hover:translate-x-1 transition-transform"
+                                >
+                                  <div className="flex items-center justify-between text-xs font-serif font-medium text-[#E2E8F0] group-hover/item:text-[#E5C77F]">
+                                    <span>
+                                      {cat.number}. {cat.name}
+                                    </span>
+                                    <ArrowRight className="w-3 h-3 text-[#C9A052] opacity-0 group-hover/item:opacity-100 transition-opacity" />
+                                  </div>
+                                  <span className="block text-[10px] text-[#77736B] group-hover/item:text-[#A69A86] line-clamp-1 mt-0.5">
+                                    {cat.sub}
+                                  </span>
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Dedicated Tier Link */}
+                          <div className="mt-6 pt-4 border-t border-[#C9A052]/15">
+                            <Link
+                              href={`/collections/${tier.slug}`}
+                              onClick={() => setCollectionsMegaOpen(false)}
+                              className="text-[11px] uppercase tracking-wider font-semibold text-[#E5C77F] hover:text-[#FFFDF8] inline-flex items-center gap-1 group/btn transition-colors"
+                            >
+                              <span>Explore Tier {tier.number}</span>
+                              <ArrowRight className="w-3 h-3 transition-transform group-hover/btn:translate-x-1" />
+                            </Link>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Bottom Status Strip */}
+                    <div className="mt-6 pt-4 border-t border-[#C9A052]/20 flex items-center justify-between text-[11px] text-[#CBD5E1]">
+                      <div className="flex items-center gap-4">
+                        <span className="flex items-center gap-1 text-[#E5C77F] font-semibold">
+                          <Clock className="w-3 h-3 text-[#C9A052]" />
+                          <span>15–20 Days Preparation Time</span>
+                        </span>
+                        <span>•</span>
+                        <span>Pan-India Insured White-Glove Transport</span>
+                      </div>
+                      <span className="text-[#A69A86] italic">
+                        100% Made-to-Order · NO COD · NO Return
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <Link
+              href="/contact"
+              className={`font-serif italic text-base sm:text-lg tracking-wide transition-all relative py-1 ${
+                pathname === "/contact"
+                  ? "text-[#E5C77F] font-medium"
+                  : "text-[#E2E8F0]/80 hover:text-[#E5C77F]"
+              }`}
+            >
+              Contact
+              {pathname === "/contact" && (
+                <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#C9A052]" />
+              )}
+            </Link>
           </nav>
 
           {/* Utility Icons & Action triggers */}
@@ -206,15 +374,17 @@ export function Header() {
             </form>
 
             <div className="mt-6">
-              <span className="text-xs uppercase tracking-wider text-[#CBD5E1] font-medium">Popular Curations:</span>
+              <span className="text-xs uppercase tracking-wider text-[#CBD5E1] font-medium">
+                Popular Curations:
+              </span>
               <div className="flex flex-wrap gap-2 mt-2">
                 {[
-                  "Ocean Reverie",
-                  "Side Table",
+                  "Statement Wall Art",
+                  "Timeless Creations",
+                  "Forever Memories",
+                  "Wedding Preservation",
                   "Geode Clock",
-                  "Coasters",
-                  "Serving Board",
-                  "Wedding Keepsake",
+                  "Festive Elegance",
                 ].map((term) => (
                   <Link
                     key={term}
@@ -238,7 +408,7 @@ export function Header() {
             className="fixed inset-0 bg-black/75 backdrop-blur-sm"
             onClick={() => setMobileMenuOpen(false)}
           />
-          <div className="fixed inset-y-0 left-0 w-full max-w-xs bg-[#121210] border-r border-[#C9A052]/20 p-6 flex flex-col justify-between overflow-y-auto">
+          <div className="fixed inset-y-0 left-0 w-full max-w-sm bg-[#121210] border-r border-[#C9A052]/20 p-6 flex flex-col justify-between overflow-y-auto">
             <div>
               <div className="flex items-center justify-between pb-6 border-b border-[#C9A052]/20">
                 <Logo theme="dark" size="sm" />
@@ -251,22 +421,101 @@ export function Header() {
                 </button>
               </div>
 
-              <nav className="mt-8 flex flex-col gap-5">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`font-serif italic text-lg flex items-center justify-between py-1 transition-colors ${
-                      pathname === link.href
-                        ? "text-[#E5C77F] font-semibold"
-                        : "text-[#E2E8F0]/80 hover:text-white"
-                    }`}
-                  >
-                    <span>{link.label}</span>
-                    <ArrowRight className="w-4 h-4 text-[#C9A052]/60" />
-                  </Link>
-                ))}
+              {/* Mobile Navigation List */}
+              <nav className="mt-6 flex flex-col gap-3">
+                <Link
+                  href="/"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`font-serif italic text-lg py-2 transition-colors ${
+                    pathname === "/" ? "text-[#E5C77F] font-semibold" : "text-[#E2E8F0]/80"
+                  }`}
+                >
+                  Home
+                </Link>
+
+                {/* Expandable Collections in Mobile */}
+                <div className="border-y border-[#C9A052]/20 py-3">
+                  <div className="flex items-center justify-between">
+                    <Link
+                      href="/collections"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="font-serif italic text-lg text-[#E5C77F] font-semibold"
+                    >
+                      Collections
+                    </Link>
+                    <button
+                      onClick={() => setMobileCollectionsExpanded(!mobileCollectionsExpanded)}
+                      className="p-1 text-[#C9A052]"
+                      aria-label="Toggle collections list"
+                    >
+                      <ChevronDown
+                        className={`w-5 h-5 transition-transform ${
+                          mobileCollectionsExpanded ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                  </div>
+
+                  {mobileCollectionsExpanded && (
+                    <div className="mt-4 space-y-4 pl-3 border-l-2 border-[#C9A052]/30">
+                      {CATALOG_TIERS.map((tier) => (
+                        <div key={tier.slug} className="space-y-2">
+                          <div className="flex items-center justify-between">
+                            <Link
+                              href={`/collections/${tier.slug}`}
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="font-serif text-base font-semibold text-[#FFFDF8] hover:text-[#E5C77F]"
+                            >
+                              {tier.number}. {tier.name}
+                            </Link>
+                            <button
+                              onClick={() =>
+                                setMobileActiveTier(
+                                  mobileActiveTier === tier.name ? null : tier.name
+                                )
+                              }
+                              className="text-[#C9A052] p-1"
+                            >
+                              <ChevronDown
+                                className={`w-4 h-4 transition-transform ${
+                                  mobileActiveTier === tier.name ? "rotate-180" : ""
+                                }`}
+                              />
+                            </button>
+                          </div>
+
+                          {mobileActiveTier === tier.name && (
+                            <div className="pl-3 space-y-2 pt-1 border-l border-[#C9A052]/20">
+                              {tier.categories.map((cat) => (
+                                <Link
+                                  key={cat.slug}
+                                  href={`/collections/${tier.slug}/${cat.slug}`}
+                                  onClick={() => setMobileMenuOpen(false)}
+                                  className="block py-1 text-xs text-[#CBD5E1] hover:text-[#E5C77F]"
+                                >
+                                  <span>{cat.number}. {cat.name}</span>
+                                  <span className="block text-[10px] text-[#77736B]">
+                                    {cat.sub}
+                                  </span>
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                <Link
+                  href="/contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`font-serif italic text-lg py-2 transition-colors ${
+                    pathname === "/contact" ? "text-[#E5C77F] font-semibold" : "text-[#E2E8F0]/80"
+                  }`}
+                >
+                  Contact
+                </Link>
               </nav>
 
               <div className="mt-8 pt-6 border-t border-[#C9A052]/15 flex flex-col gap-3">
