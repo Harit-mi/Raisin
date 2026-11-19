@@ -28,11 +28,13 @@ interface DatabaseSchema {
 }
 
 const INITIAL_CATEGORIES: Category[] = [
+  // 1. Signature Collections
   {
     id: "cat-statement-wall-art",
     name: "Statement Wall Art",
     slug: "statement-wall-art",
-    description: "Geode Art • Ocean Art • Abstract Resin Art • Custom Wall Panels.",
+    tier: "Signature Collections",
+    description: "Geode Art • Ocean Art • Abstract Resin Art",
     image: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80",
     itemCount: 4,
   },
@@ -40,7 +42,8 @@ const INITIAL_CATEGORIES: Category[] = [
     id: "cat-timeless-creations",
     name: "Timeless Creations",
     slug: "timeless-creations",
-    description: "Resin Clocks • Geode Clocks • Designer Timepieces.",
+    tier: "Signature Collections",
+    description: "Resin Clocks • Geode Clocks • Designer Timepieces",
     image: "/uploads/custom_clock.png",
     itemCount: 3,
   },
@@ -48,15 +51,19 @@ const INITIAL_CATEGORIES: Category[] = [
     id: "cat-luxe-living-tableware",
     name: "Luxe Living & Tableware",
     slug: "luxe-living-tableware",
-    description: "Serving Trays • Coasters • Table Décor • Tissue Holders.",
+    tier: "Signature Collections",
+    description: "Serving Trays • Coasters • Table Décor • Tissue Holders",
     image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80",
     itemCount: 5,
   },
+
+  // 2. Hand-Poured Masterpieces
   {
     id: "cat-forever-memories",
     name: "Forever Memories",
     slug: "forever-memories",
-    description: "Wedding Preservation • Flower Preservation • Photo Frames • Memory Clocks.",
+    tier: "Hand-Poured Masterpieces",
+    description: "Wedding Preservation • Photo Frames • Memory Clocks",
     image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80",
     itemCount: 3,
   },
@@ -64,7 +71,8 @@ const INITIAL_CATEGORIES: Category[] = [
     id: "cat-wedding-celebration",
     name: "Wedding & Celebration",
     slug: "wedding-celebration",
-    description: "Ring Platters • Varmala Preservation • Haldi Bowls • Wedding Gifts.",
+    tier: "Hand-Poured Masterpieces",
+    description: "Ring Platters • Varmala Preservation • Haldi Bowls • Wedding Gifts",
     image: "https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=800&q=80",
     itemCount: 4,
   },
@@ -72,15 +80,19 @@ const INITIAL_CATEGORIES: Category[] = [
     id: "cat-personalized-treasures",
     name: "Personalized Treasures",
     slug: "personalized-treasures",
-    description: "Nameplates • Keychains • Customized Gifts • Name Décor.",
+    tier: "Hand-Poured Masterpieces",
+    description: "Nameplates • Keychains • Customized Gifts",
     image: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=80",
     itemCount: 4,
   },
+
+  // 3. Gift Articles
   {
     id: "cat-festive-elegance",
     name: "Festive Elegance",
     slug: "festive-elegance",
-    description: "Shubh Labh • Torans • Diya Plates • Festive Hangings.",
+    tier: "Gift Articles",
+    description: "Shubh Labh • Torans • Diya Plates • Festive Hangings",
     image: "https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?auto=format&fit=crop&w=800&q=80",
     itemCount: 3,
   },
@@ -88,7 +100,8 @@ const INITIAL_CATEGORIES: Category[] = [
     id: "cat-corporate-signature-gifting",
     name: "Corporate & Signature Gifting",
     slug: "corporate-signature-gifting",
-    description: "Corporate Hampers • Custom Branding • Bulk Gifts.",
+    tier: "Gift Articles",
+    description: "Corporate Hampers • Custom Branding • Bulk Gifts",
     image: "https://images.unsplash.com/photo-1590736969955-71cc94801759?auto=format&fit=crop&w=800&q=80",
     itemCount: 3,
   },

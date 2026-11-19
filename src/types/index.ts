@@ -165,6 +165,7 @@ export interface Category {
   id: string;
   name: string;
   slug: string;
+  tier?: "Signature Collections" | "Hand-Poured Masterpieces" | "Gift Articles";
   description: string;
   image: string;
   itemCount: number;
