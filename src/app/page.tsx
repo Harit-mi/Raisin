@@ -237,12 +237,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. FEATURED PRODUCTS GRID */}
-      <section className="py-20 bg-[#0B0B0A]">
+      {/* 4. HAND-POURED MASTERPIECES (CATEGORIES 4 TO 8) */}
+      <section className="py-20 bg-[#0B0B0A] border-t border-[#C9A052]/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-xs uppercase tracking-widest text-[#C9A052] font-semibold">
-              Bestselling Creations
+              Bespoke Artisan Curations
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#E2E8F0] mt-1">
               Hand-Poured Masterpieces
@@ -252,18 +252,57 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {categories
+              .filter((c) =>
+                [
+                  "Forever Memories",
+                  "Wedding & Celebration",
+                  "Personalized Treasures",
+                  "Festive Elegance",
+                  "Corporate & Signature Gifting",
+                ].includes(c.name)
+              )
+              .map((cat) => (
+                <Link
+                  key={cat.id}
+                  href={`/shop?category=${encodeURIComponent(cat.name)}`}
+                  className="group relative h-80 rounded-2xl overflow-hidden shadow-lg flex flex-col justify-end p-6 border border-[#C9A052]/25 hover:border-[#E5C77F] transition-all duration-500 bg-[#161614]"
+                >
+                  <Image
+                    src={cat.image}
+                    alt={cat.name}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-80"
+                    unoptimized
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0A] via-[#0B0B0A]/70 to-transparent" />
+
+                  <div className="relative z-10">
+                    <span className="text-[11px] font-semibold tracking-widest uppercase text-[#E5C77F] bg-[#0B0B0A]/80 border border-[#C9A052]/40 px-2.5 py-0.5 rounded-full w-fit inline-block mb-2">
+                      {cat.itemCount} Creations
+                    </span>
+                    <h3 className="font-serif text-2xl font-bold text-white group-hover:text-[#E5C77F] transition-colors">
+                      {cat.name}
+                    </h3>
+                    <p className="text-xs text-[#CBD5E1] mt-1 line-clamp-2 leading-relaxed">
+                      {cat.description}
+                    </p>
+                    <div className="mt-4 inline-flex items-center gap-1.5 text-xs text-[#E5C77F] font-semibold uppercase tracking-wider group-hover:translate-x-1 transition-transform">
+                      <span>View Creations</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </div>
+                  </div>
+                </Link>
+              ))}
           </div>
 
           <div className="mt-14 text-center">
             <Link
               href="/shop"
-              className="inline-flex items-center gap-2 bg-[#121210] text-[#E5C77F] hover:bg-[#C9A052] hover:text-[#0B0B0A] font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-xl transition-all shadow-md"
+              className="inline-flex items-center gap-2 bg-[#121210] border border-[#C9A052]/40 text-[#E5C77F] hover:bg-[#C9A052] hover:text-[#0B0B0A] font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-xl transition-all shadow-md"
             >
-              <span>View All Products</span>
+              <span>View All Collections & Creations</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
