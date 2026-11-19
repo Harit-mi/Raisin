@@ -103,15 +103,29 @@ function ShopContent() {
     <div className="bg-[#0B0B0A] min-h-screen py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page Header */}
-        <div className="border-b border-[#C9A052]/20 pb-8 mb-8 text-center max-w-2xl mx-auto">
+        <div className="border-b border-[#C9A052]/20 pb-8 mb-8 text-center max-w-2xl mx-auto relative">
+          {selectedCategory !== "All" && (
+            <div className="mb-4">
+              <button
+                onClick={() => setSelectedCategory("All")}
+                className="inline-flex items-center gap-2 bg-[#161614] hover:bg-[#1D1D19] border border-[#C9A052]/40 text-[#E5C77F] px-4 py-2 rounded-xl text-xs uppercase tracking-wider font-semibold transition-all shadow-md group"
+              >
+                <RotateCcw className="w-3.5 h-3.5 transition-transform group-hover:-rotate-90" />
+                <span>← Back to All Categories</span>
+              </button>
+            </div>
+          )}
+
           <span className="text-xs uppercase tracking-widest text-[#C9A052] font-semibold">
-            Atelier Catalog
+            {selectedCategory === "All" ? "Atelier Catalog" : "Signature Category"}
           </span>
           <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#E2E8F0] mt-1">
-            Handcrafted Collection
+            {selectedCategory === "All" ? "Handcrafted Collection" : selectedCategory}
           </h1>
           <p className="text-sm text-[#94A3B8] mt-2">
-            Explore original hand-poured ocean resin wall art, statement tables, crystal geode clocks, and bespoke functional decor.
+            {selectedCategory === "All"
+              ? "Explore original hand-poured ocean resin wall art, statement tables, crystal geode clocks, and bespoke functional decor."
+              : `Showing exclusive handcrafted pieces curated under ${selectedCategory}.`}
           </p>
         </div>
 
