@@ -12,9 +12,9 @@ export function Logo({ theme = "dark", className = "", size = "md", showText = t
   const isDark = theme === "dark"; // on dark background -> champagne gold
 
   const sizeStyles = {
-    sm: { symbol: 32, text: "text-lg", sub: "text-[9px] tracking-[0.25em]" },
-    md: { symbol: 42, text: "text-2xl", sub: "text-[10px] tracking-[0.3em]" },
-    lg: { symbol: 56, text: "text-3xl", sub: "text-[12px] tracking-[0.35em]" },
+    sm: { symbol: 38, text: "text-xl", sub: "text-[10px] tracking-[0.25em]" },
+    md: { symbol: 54, text: "text-2xl sm:text-3xl", sub: "text-[11px] tracking-[0.3em]" },
+    lg: { symbol: 70, text: "text-3xl sm:text-4xl", sub: "text-[13px] tracking-[0.35em]" },
   }[size];
 
   return (
