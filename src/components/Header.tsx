@@ -84,22 +84,19 @@ export function Header() {
           </div>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-7">
+          <nav className="hidden lg:flex items-center gap-9">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-xs uppercase tracking-widest font-medium transition-colors relative py-1 ${
-                    link.highlight
-                      ? "text-[#E5C77F] font-semibold flex items-center gap-1.5 hover:text-white"
-                      : isActive
-                      ? "text-[#C9A052]"
-                      : "text-[#F4EFE5]/80 hover:text-[#E5C77F]"
+                  className={`font-serif italic text-base sm:text-lg tracking-wide transition-all relative py-1 ${
+                    isActive
+                      ? "text-[#E5C77F] font-medium"
+                      : "text-[#E2E8F0]/80 hover:text-[#E5C77F]"
                   }`}
                 >
-                  {link.highlight && <span className="w-1.5 h-1.5 rounded-full bg-[#C9A052] inline-block animate-ping" />}
                   {link.label}
                   {isActive && (
                     <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#C9A052]" />
@@ -260,12 +257,10 @@ export function Header() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`text-sm uppercase tracking-wider font-medium flex items-center justify-between py-1 transition-colors ${
-                      link.highlight
+                    className={`font-serif italic text-lg flex items-center justify-between py-1 transition-colors ${
+                      pathname === link.href
                         ? "text-[#E5C77F] font-semibold"
-                        : pathname === link.href
-                        ? "text-[#C9A052]"
-                        : "text-[#F4EFE5]/80 hover:text-white"
+                        : "text-[#E2E8F0]/80 hover:text-white"
                     }`}
                   >
                     <span>{link.label}</span>
