@@ -110,20 +110,13 @@ export default function HomePage() {
             Handcrafted resin art, elegant home décor, and custom creations designed to bring beauty and individuality into your space.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex items-center justify-center">
             <Link
               href="/shop"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#C9A052] text-[#0B0B0A] font-semibold text-xs uppercase tracking-widest hover:bg-[#E5C77F] transition-all duration-300 shadow-xl shadow-[#C9A052]/20 flex items-center justify-center gap-2 group"
+              className="w-full sm:w-auto px-10 py-4 rounded-xl bg-[#C9A052] text-[#0B0B0A] font-semibold text-xs uppercase tracking-widest hover:bg-[#E5C77F] transition-all duration-300 shadow-xl shadow-[#C9A052]/20 flex items-center justify-center gap-2 group"
             >
               <span>Explore the Collection</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-
-            <Link
-              href="/custom-studio"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#121210]/80 hover:bg-[#121210] text-[#E5C77F] border border-[#C9A052]/50 font-semibold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2"
-            >
-              <span>Create Your Custom Piece</span>
             </Link>
           </div>
 
