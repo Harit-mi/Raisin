@@ -123,7 +123,6 @@ export default function HomePage() {
               href="/custom-studio"
               className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#121210]/80 hover:bg-[#121210] text-[#E5C77F] border border-[#C9A052]/50 font-semibold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2"
             >
-              <Sliders className="w-4 h-4 text-[#C9A052]" />
               <span>Create Your Custom Piece</span>
             </Link>
           </div>
@@ -201,7 +200,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {categories.slice(0, 4).map((cat) => (
+            {categories.slice(0, 8).map((cat) => (
               <Link
                 key={cat.id}
                 href={`/shop?category=${encodeURIComponent(cat.name)}`}
@@ -214,7 +213,7 @@ export default function HomePage() {
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   unoptimized
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#121210] via-[#121210]/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#121210] via-[#121210]/50 to-transparent" />
 
                 <div className="relative z-10">
                   <span className="text-[11px] font-semibold tracking-widest uppercase text-[#E5C77F]">

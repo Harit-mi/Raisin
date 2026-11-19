@@ -21,43 +21,33 @@ export default function ReturnsPolicyPage() {
           <section className="space-y-3">
             <h2 className="font-serif text-xl font-bold text-[#E2E8F0] flex items-center gap-2">
               <ShieldCheck className="w-5 h-5 text-[#C9A052]" />
-              1. The Nature of Hand-Poured Artisanal Craft
+              1. 100% Bespoke & Made-to-Order Creation
             </h2>
             <p className="text-[#94A3B8]">
-              Every piece crafted by DRL Resin & Décor is individually hand-poured, shaped, and polished. Because epoxy resin cures organically in liquid flow, minor variations in micro-bubbles, wave patterns, natural wood grain contours, and pigment swirls are not defects; they are the authentic hallmarks of handcrafted luxury artwork.
+              Every single creation at DRL Resin & Décor is made exclusively to order. Handcrafting fine optical resin and natural live-edge timbers requires multi-stage thermal curing, hand-pigmenting, crystal placement, and custom diamond polishing over <strong>15 to 20 days</strong>.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="font-serif text-xl font-bold text-[#E2E8F0] flex items-center gap-2">
-              <RotateCcw className="w-5 h-5 text-[#C9A052]" />
-              2. Ready-to-Ship Decor (Coasters, Bowls, Standard Clocks & Trays)
+            <h2 className="font-serif text-xl font-bold text-[#E2E8F0] flex items-center gap-2 text-rose-400">
+              <RotateCcw className="w-5 h-5 text-rose-400" />
+              2. Strict Policy: NO Exchange · NO Return
             </h2>
             <p className="text-[#94A3B8]">
-              If you are not completely enchanted with a non-customized, ready-to-ship decor item, you may request a return within <strong>7 days</strong> of delivery, provided the item remains unused, in original pristine condition, and within its protective packaging vault.
-            </p>
-          </section>
-
-          <section className="space-y-3">
-            <h2 className="font-serif text-xl font-bold text-[#E2E8F0] flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-[#C9A052]" />
-              3. Custom & Made-to-Order Commissions
-            </h2>
-            <p className="text-[#94A3B8]">
-              Custom studio creations (including bespoke river tables, custom-sized wall canvases, personalized name engravings, and bridal floral preservation pieces) are created exclusively to individual client specifications. Consequently, custom orders cannot be returned once approved and cast into production.
+              Because all articles are individually commissioned and cast to order according to client specifications, <strong>we do not accept returns or exchanges</strong> under any circumstances once production has begun.
             </p>
             <p className="text-[#94A3B8]">
-              To ensure 100% satisfaction, we provide digital photographs of your timber slab and pigment swatches prior to final topcoat casting.
+              Additionally, please note that <strong>Cash on Delivery (COD) is NOT available</strong>. All commissions require 100% pre-paid confirmation via our secure Razorpay gateway (UPI, Cards, NetBanking).
             </p>
           </section>
 
           <section className="space-y-3">
             <h2 className="font-serif text-xl font-bold text-[#E2E8F0] flex items-center gap-2">
               <AlertCircle className="w-5 h-5 text-[#C9A052]" />
-              4. Damaged in Transit Resolution
+              3. Transit Impact & Damaged Goods Resolution
             </h2>
             <p className="text-[#94A3B8]">
-              In the unlikely circumstance that your item experiences impact damage during courier transit, please take photographs/video of the outer carton and product within 48 hours of delivery and contact concierge@drlresindecor.com. We will immediately arrange a return pickup and expedite a complimentary priority replacement or full refund.
+              In the rare event that your handcrafted piece incurs physical damage during insured transit, please share unboxing photographs and video within 24 hours of delivery to concierge@drlresindecor.com. We will inspect the transit damage and arrange an expedited priority replacement.
             </p>
           </section>
         </div>

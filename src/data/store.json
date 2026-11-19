@@ -4,7 +4,7 @@
       "id": "DRL-PRD-001",
       "name": "Ocean Reverie Wall Art",
       "slug": "ocean-reverie-wall-art",
-      "category": "Resin Wall Art",
+      "category": "Statement Wall Art",
       "tagline": "3-tier dimensional ocean surf with genuine quartz sands and 24K gold foil accents.",
       "description": "Hand-poured across 5 meticulous curing stages over 10 days, 'Ocean Reverie' replicates the soothing energy of turquoise Indian Ocean shorelines. Created on sustainably sourced birchwood panels with anti-yellowing optical UV-stabilized resin, authentic sea sands, and real gold leaf highlights.",
       "price": 14500,
@@ -17,8 +17,8 @@
       "sku": "DRL-ART-001",
       "inventoryCount": 4,
       "inStock": true,
-      "isReadyToShip": true,
-      "isMadeToOrder": false,
+      "isReadyToShip": false,
+      "isMadeToOrder": true,
       "isCustomizable": true,
       "isFeatured": true,
       "dimensions": "24 x 36 inches (60 x 90 cm)",
@@ -30,7 +30,7 @@
         "24K champagne leaf"
       ],
       "finish": "Ultra-high gloss mirror resin",
-      "productionLeadTime": "Ready to dispatch in 48 hours",
+      "productionLeadTime": "15 to 20 days depending on article",
       "shippingInfo": "Shipped in custom wooden crate with shock-resistant cushioning. Insured transit.",
       "careInstructions": [
         "Wipe gently with a microfiber cloth and mild warm water.",
@@ -60,7 +60,7 @@
       "id": "DRL-PRD-002",
       "name": "Golden Hour Trinket Tray",
       "slug": "golden-hour-trinket-tray",
-      "category": "Resin Trays",
+      "category": "Luxe Living & Tableware",
       "tagline": "Translucent amber swirl tray finished with hand-cast champagne gold handles.",
       "description": "A graceful addition to vanities, entry consoles, or coffee tables. The Golden Hour tray captures the warmth of sunset through molten-effect resin ribbons, framed with brushed champagne metal handles for easy hosting and display.",
       "price": 3499,
@@ -72,8 +72,8 @@
       "sku": "DRL-TRY-002",
       "inventoryCount": 12,
       "inStock": true,
-      "isReadyToShip": true,
-      "isMadeToOrder": false,
+      "isReadyToShip": false,
+      "isMadeToOrder": true,
       "isCustomizable": true,
       "isFeatured": true,
       "dimensions": "14 x 10 x 1.5 inches",
@@ -84,7 +84,7 @@
         "Brushed metal handles"
       ],
       "finish": "Silky gloss topcoat with scratch-resistant polymer",
-      "productionLeadTime": "Ready to ship in 1-2 business days",
+      "productionLeadTime": "15 to 20 days depending on article",
       "shippingInfo": "Standard express delivery across India in 3-5 days.",
       "careInstructions": [
         "Hand wash with mild dish soap.",
@@ -114,7 +114,7 @@
       "id": "DRL-PRD-003",
       "name": "Coastal Edge Side Table",
       "slug": "coastal-edge-side-table",
-      "category": "Resin Tables & Furniture",
+      "category": "Luxe Living & Tableware",
       "tagline": "Single-slab seasoned Indian Rosewood with translucent deep ocean lagoon river.",
       "description": "A signature statement furniture piece. We hand-select 40-year naturally seasoned Rosewood (Sheesham) slabs with wild natural live edges, then cast an ethereal ocean river with graded depths from turquoise shoals to abyssal navy, complete with matte black powder-coated steel hairpin legs.",
       "price": 38500,
@@ -139,7 +139,7 @@
         "Powder-coated steel legs"
       ],
       "finish": "Hardwax natural oil wood finish with ultra-gloss resin river",
-      "productionLeadTime": "Crafted to order: 12-16 business days",
+      "productionLeadTime": "15 to 20 days depending on article",
       "shippingInfo": "Shipped via White Glove Furniture Transport with tracking.",
       "careInstructions": [
         "Use coasters for hot mugs over 65°C.",
@@ -169,7 +169,7 @@
       "id": "DRL-PRD-004",
       "name": "Midnight Bloom Coasters (Set of 4)",
       "slug": "midnight-bloom-coasters",
-      "category": "Resin Coasters",
+      "category": "Luxe Living & Tableware",
       "tagline": "Deep black mica with liquid gold leaf filigree and crystal gilded rims.",
       "description": "A set of 4 hexagonal luxury coasters that evoke the mystery of blossoming orchids under midnight moonlight. Layered with black diamond pigment, metallic champagne foil, and hand-gilded edges, each coaster features cork backing to protect fine furniture.",
       "price": 1899,
@@ -181,8 +181,8 @@
       "sku": "DRL-CST-004",
       "inventoryCount": 25,
       "inStock": true,
-      "isReadyToShip": true,
-      "isMadeToOrder": false,
+      "isReadyToShip": false,
+      "isMadeToOrder": true,
       "isCustomizable": true,
       "isFeatured": true,
       "dimensions": "4.5 inches across each (Set of 4)",
@@ -193,7 +193,7 @@
         "Protective cork back"
       ],
       "finish": "Glossy topcoat with gilded metallic edge",
-      "productionLeadTime": "In stock, ready to dispatch within 24 hours",
+      "productionLeadTime": "15 to 20 days depending on article",
       "shippingInfo": "Comes packed in an embossed gift box tied with champagne satin ribbon.",
       "careInstructions": [
         "Wipe clean with a damp cloth.",
@@ -222,7 +222,7 @@
       "id": "DRL-PRD-005",
       "name": "Celestial Resin Clock",
       "slug": "celestial-resin-clock",
-      "category": "Resin Clocks",
+      "category": "Timeless Creations",
       "tagline": "Silent sweep quartz movement embedded in raw geode crystals and swirling gold veins.",
       "description": "A functional work of art. The Celestial Clock features natural amethyst crystal clusters embedded directly into an ivory and champagne marble resin canvas. Equipped with high-torque silent German quartz movement so your living room or study stays serenely quiet.",
       "price": 8900,
@@ -235,8 +235,8 @@
       "sku": "DRL-CLK-005",
       "inventoryCount": 6,
       "inStock": true,
-      "isReadyToShip": true,
-      "isMadeToOrder": false,
+      "isReadyToShip": false,
+      "isMadeToOrder": true,
       "isCustomizable": true,
       "isFeatured": true,
       "dimensions": "16 inches diameter (40 cm)",
@@ -248,7 +248,7 @@
         "Brass hour hands"
       ],
       "finish": "Glass-smooth resin with textured 3D geode center",
-      "productionLeadTime": "Dispatches in 2-3 business days",
+      "productionLeadTime": "15 to 20 days depending on article",
       "shippingInfo": "Packed in reinforced box with hands protected.",
       "careInstructions": [
         "Requires 1 AA battery (included).",
@@ -277,7 +277,7 @@
       "id": "DRL-PRD-006",
       "name": "Sculpted Keepsake Bowl",
       "slug": "sculpted-keepsake-bowl",
-      "category": "Home Accessories",
+      "category": "Luxe Living & Tableware",
       "tagline": "Freeform organic wave rim cast in pearlized alabaster and gold leaf specks.",
       "description": "Cast freehand with organic draping techniques, no two keepsake bowls are ever identical. Ideal for storing heirloom jewelry, rings, crystals, or as a sculptural centerpiece on a vanity or coffee table.",
       "price": 2799,
@@ -289,8 +289,8 @@
       "sku": "DRL-BWL-006",
       "inventoryCount": 8,
       "inStock": true,
-      "isReadyToShip": true,
-      "isMadeToOrder": false,
+      "isReadyToShip": false,
+      "isMadeToOrder": true,
       "isCustomizable": false,
       "isFeatured": false,
       "dimensions": "8 x 8 x 3 inches",
@@ -301,7 +301,7 @@
         "24K gold foil flakes"
       ],
       "finish": "Smooth tactile satin interior with glossy exterior",
-      "productionLeadTime": "Ready to ship in 1-2 days",
+      "productionLeadTime": "15 to 20 days depending on article",
       "shippingInfo": "Shipped in bubble-shielded gift packaging.",
       "careInstructions": [
         "Rinse with cool water.",
@@ -320,7 +320,7 @@
       "id": "DRL-PRD-007",
       "name": "Riverstone Serving Board",
       "slug": "riverstone-serving-board",
-      "category": "Serving Boards",
+      "category": "Luxe Living & Tableware",
       "tagline": "Sustainable seasoned mango wood paired with a rippling oceanic tide resin inlay.",
       "description": "Elevate weekend entertaining and intimate dinner parties. Crafted from kiln-dried Indian mango wood, this charcuterie board features a hand-blown white resin seafoam wave crashing across rich wood grain. Treated with organic food-safe beeswax.",
       "price": 4200,
@@ -332,8 +332,8 @@
       "sku": "DRL-SRV-007",
       "inventoryCount": 15,
       "inStock": true,
-      "isReadyToShip": true,
-      "isMadeToOrder": false,
+      "isReadyToShip": false,
+      "isMadeToOrder": true,
       "isCustomizable": true,
       "isFeatured": true,
       "dimensions": "18 x 9 x 0.8 inches",
@@ -344,7 +344,7 @@
         "Organic beeswax conditioning"
       ],
       "finish": "Natural satin wood finish with glass-like resin wave",
-      "productionLeadTime": "Ships in 24-48 hours",
+      "productionLeadTime": "15 to 20 days depending on article",
       "shippingInfo": "Packaged with complimentary wood conditioning butter and care card.",
       "careInstructions": [
         "Cut only on the wooden section, not directly on the resin wave.",
@@ -374,7 +374,7 @@
       "id": "DRL-PRD-008",
       "name": "Personalized Memory Keepsake",
       "slug": "personalized-memory-keepsake",
-      "category": "Personalized Keepsakes",
+      "category": "Forever Memories",
       "tagline": "Preserve wedding florals, anniversary memories, and custom engravings in archival glass resin.",
       "description": "Our most sentimental offering. Send us your bridal bouquet petals, varmala flowers, baby tokens, or ceremonial keepsakes. We carefully dehydrate botanical specimens in silica crystals and cast them inside crystal-clear archival resin blocks with custom laser-engraved brass plaques or text.",
       "price": 6800,
@@ -398,7 +398,7 @@
         "Engraved brass or vinyl"
       ],
       "finish": "Ultra-clear crystal polish with optical clarity",
-      "productionLeadTime": "Custom creation: 10-14 days upon receiving client botanicals",
+      "productionLeadTime": "15 to 20 days depending on article",
       "shippingInfo": "Shipped in padded presentation vault with velvet pouch.",
       "careInstructions": [
         "Keep away from direct heat sources.",
@@ -430,60 +430,68 @@
   ],
   "categories": [
     {
-      "id": "cat-wall-art",
-      "name": "Resin Wall Art",
-      "slug": "resin-wall-art",
-      "description": "Multilayered statement canvases with 3D ocean swells, geodes, and liquid glass gloss.",
+      "id": "cat-statement-wall-art",
+      "name": "Statement Wall Art",
+      "slug": "statement-wall-art",
+      "description": "Geode Art • Ocean Art • Abstract Resin Art • Custom Wall Panels.",
       "image": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80",
       "itemCount": 4
     },
     {
-      "id": "cat-clocks",
-      "name": "Resin Clocks",
-      "slug": "resin-clocks",
-      "description": "Quiet sweep luxury timepieces handcrafted with crystal geodes and gilded hour markers.",
+      "id": "cat-timeless-creations",
+      "name": "Timeless Creations",
+      "slug": "timeless-creations",
+      "description": "Resin Clocks • Geode Clocks • Designer Timepieces.",
+      "image": "/uploads/custom_clock.png",
+      "itemCount": 3
+    },
+    {
+      "id": "cat-luxe-living-tableware",
+      "name": "Luxe Living & Tableware",
+      "slug": "luxe-living-tableware",
+      "description": "Serving Trays • Coasters • Table Décor • Tissue Holders.",
+      "image": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80",
+      "itemCount": 5
+    },
+    {
+      "id": "cat-forever-memories",
+      "name": "Forever Memories",
+      "slug": "forever-memories",
+      "description": "Wedding Preservation • Flower Preservation • Photo Frames • Memory Clocks.",
+      "image": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80",
+      "itemCount": 3
+    },
+    {
+      "id": "cat-wedding-celebration",
+      "name": "Wedding & Celebration",
+      "slug": "wedding-celebration",
+      "description": "Ring Platters • Varmala Preservation • Haldi Bowls • Wedding Gifts.",
+      "image": "https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=800&q=80",
+      "itemCount": 4
+    },
+    {
+      "id": "cat-personalized-treasures",
+      "name": "Personalized Treasures",
+      "slug": "personalized-treasures",
+      "description": "Nameplates • Keychains • Customized Gifts • Name Décor.",
+      "image": "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=80",
+      "itemCount": 4
+    },
+    {
+      "id": "cat-festive-elegance",
+      "name": "Festive Elegance",
+      "slug": "festive-elegance",
+      "description": "Shubh Labh • Torans • Diya Plates • Festive Hangings.",
       "image": "https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?auto=format&fit=crop&w=800&q=80",
       "itemCount": 3
     },
     {
-      "id": "cat-coasters",
-      "name": "Resin Coasters",
-      "slug": "resin-coasters",
-      "description": "Hand-poured artisan drinkware sets featuring natural raw edges and champagne leaf.",
-      "image": "https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=800&q=80",
-      "itemCount": 5
-    },
-    {
-      "id": "cat-trays",
-      "name": "Resin Trays",
-      "slug": "resin-trays",
-      "description": "Luxurious vanity and vanity coffee table trays with brushed brass and cast handles.",
-      "image": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80",
-      "itemCount": 3
-    },
-    {
-      "id": "cat-tables",
-      "name": "Resin Tables & Furniture",
-      "slug": "resin-tables",
-      "description": "Live-edge teak and walnut river tables infused with deep oceanic translucent epoxy.",
-      "image": "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=800&q=80",
-      "itemCount": 2
-    },
-    {
-      "id": "cat-serving-boards",
-      "name": "Serving Boards",
-      "slug": "serving-boards",
-      "description": "Acacia and seasoned mango timber charcuterie boards layered with sea-wave resin.",
+      "id": "cat-corporate-signature-gifting",
+      "name": "Corporate & Signature Gifting",
+      "slug": "corporate-signature-gifting",
+      "description": "Corporate Hampers • Custom Branding • Bulk Gifts.",
       "image": "https://images.unsplash.com/photo-1590736969955-71cc94801759?auto=format&fit=crop&w=800&q=80",
       "itemCount": 3
-    },
-    {
-      "id": "cat-keepsakes",
-      "name": "Personalized Keepsakes",
-      "slug": "personalized-keepsakes",
-      "description": "Preserved bridal florals, ceremonial memories, and custom monogrammed resin heirlooms.",
-      "image": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80",
-      "itemCount": 2
     }
   ],
   "orders": [

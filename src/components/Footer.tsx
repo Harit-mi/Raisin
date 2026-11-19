@@ -96,33 +96,33 @@ export function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm text-[#CBD5E1]">
               <li>
-                <Link href="/shop?category=Resin+Wall+Art" className="hover:text-white transition-colors">
-                  Ocean Wall Art
+                <Link href="/shop?category=Statement+Wall+Art" className="hover:text-white transition-colors">
+                  Statement Wall Art
                 </Link>
               </li>
               <li>
-                <Link href="/shop?category=Resin+Clocks" className="hover:text-white transition-colors">
-                  Geode Luxury Clocks
+                <Link href="/shop?category=Timeless+Creations" className="hover:text-white transition-colors">
+                  Timeless Creations (Clocks)
                 </Link>
               </li>
               <li>
-                <Link href="/shop?category=Resin+Tables+%26+Furniture" className="hover:text-white transition-colors">
-                  Live Edge River Tables
+                <Link href="/shop?category=Luxe+Living+%26+Tableware" className="hover:text-white transition-colors">
+                  Luxe Living & Tableware
                 </Link>
               </li>
               <li>
-                <Link href="/shop?category=Resin+Coasters" className="hover:text-white transition-colors">
-                  Coaster Sets
+                <Link href="/shop?category=Forever+Memories" className="hover:text-white transition-colors">
+                  Forever Memories (Preservation)
                 </Link>
               </li>
               <li>
-                <Link href="/shop?category=Resin+Trays" className="hover:text-white transition-colors">
-                  Vanity & Serving Trays
+                <Link href="/shop?category=Wedding+%26+Celebration" className="hover:text-white transition-colors">
+                  Wedding & Celebration
                 </Link>
               </li>
               <li>
-                <Link href="/shop?category=Personalized+Keepsakes" className="hover:text-white transition-colors">
-                  Wedding Keepsakes
+                <Link href="/shop?category=Festive+Elegance" className="hover:text-white transition-colors">
+                  Festive Elegance
                 </Link>
               </li>
             </ul>

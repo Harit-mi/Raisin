@@ -82,18 +82,7 @@ export function Header() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Mobile Menu Button */}
-          <div className="flex items-center lg:hidden">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 -ml-2 text-[#E5C77F] hover:text-white transition-colors"
-              aria-label="Toggle navigation menu"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-
-          {/* Brand Logo */}
+          {/* Brand Logo - Aligned left */}
           <div className="flex-shrink-0 flex items-center">
             <Logo theme="dark" size="md" />
           </div>
@@ -169,6 +158,15 @@ export function Header() {
               <span className="bg-[#C9A052] text-[#0B0B0A] font-bold text-[11px] px-1.5 py-0.2 rounded-full min-w-[18px] text-center">
                 {itemCount}
               </span>
+            </button>
+
+            {/* Mobile Menu Button on the right */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 text-[#E5C77F] hover:text-white transition-colors lg:hidden"
+              aria-label="Toggle navigation menu"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>

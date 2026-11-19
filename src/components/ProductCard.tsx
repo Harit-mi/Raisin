@@ -50,16 +50,10 @@ export function ProductCard({ product }: ProductCardProps) {
 
         {/* Floating Badges */}
         <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
-          {product.isReadyToShip ? (
-            <span className="bg-[#0B0B0A]/90 backdrop-blur-sm text-[#E5C77F] text-[10px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full border border-[#C9A052]/40 shadow-sm">
-              Ready to Ship
-            </span>
-          ) : (
-            <span className="bg-[#0B0B0A]/90 backdrop-blur-sm text-[#E2E8F0] text-[10px] font-medium tracking-wider uppercase px-2.5 py-1 rounded-full border border-[#94A3B8]/30 flex items-center gap-1 shadow-sm">
-              <Sparkles className="w-2.5 h-2.5 text-[#C9A052]" />
-              Made to Order
-            </span>
-          )}
+          <span className="bg-[#0B0B0A]/90 backdrop-blur-sm text-[#E2E8F0] text-[10px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full border border-[#C9A052]/40 flex items-center gap-1 shadow-sm">
+            <Sparkles className="w-2.5 h-2.5 text-[#C9A052]" />
+            Made to Order
+          </span>
 
           {discountPercent && (
             <span className="bg-gradient-to-r from-[#C9A052] to-[#E5C77F] text-[#0B0B0A] font-bold text-[10px] tracking-wider uppercase px-2.5 py-0.5 rounded-full w-fit shadow-md">

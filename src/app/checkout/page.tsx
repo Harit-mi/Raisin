@@ -31,7 +31,7 @@ export default function CheckoutPage() {
   const [pincode, setPincode] = useState("");
   const [giftNote, setGiftNote] = useState("");
   const [deliveryInstructions, setDeliveryInstructions] = useState("");
-  const [paymentMethod, setPaymentMethod] = useState<"Razorpay" | "Cash on Delivery">("Razorpay");
+  const [paymentMethod, setPaymentMethod] = useState<"Razorpay">("Razorpay");
 
   // Server Calculation
   const [serverCalculation, setServerCalculation] = useState<{
@@ -392,70 +392,51 @@ export default function CheckoutPage() {
 
             {/* 2. Payment Method Selector */}
             <div className="bg-[#161614] border border-[#C9A052]/20 rounded-3xl p-6 sm:p-8 shadow-sm">
-              <h2 className="font-serif text-xl font-bold text-[#E2E8F0] mb-4 pb-3 border-b border-[#C9A052]/20">
-                2. Payment Method
-              </h2>
+              <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#C9A052]/20">
+                <h2 className="font-serif text-xl font-bold text-[#E2E8F0]">
+                  2. Payment Method
+                </h2>
+                <span className="text-[11px] font-bold text-rose-400 bg-rose-500/10 border border-rose-500/30 px-2.5 py-0.5 rounded-full">
+                  NO Cash on Delivery (COD)
+                </span>
+              </div>
 
               <div className="space-y-3">
                 {/* Razorpay Gateway */}
                 <label
-                  className={`flex items-start gap-3.5 p-4 rounded-2xl border cursor-pointer transition-all ${
-                    paymentMethod === "Razorpay"
-                      ? "border-[#C9A052] bg-[#C9A052]/10 ring-1 ring-[#C9A052]"
-                      : "border-[#C9A052]/20 bg-[#0B0B0A] hover:border-[#A69A86]"
-                  }`}
+                  className="flex items-start gap-3.5 p-4 rounded-2xl border border-[#C9A052] bg-[#C9A052]/10 ring-1 ring-[#C9A052] cursor-pointer"
                 >
                   <input
                     type="radio"
                     name="paymentMethod"
-                    checked={paymentMethod === "Razorpay"}
-                    onChange={() => setPaymentMethod("Razorpay")}
+                    checked={true}
+                    readOnly
                     className="mt-1 accent-[#C9A052]"
                   />
                   <div className="flex-1">
                     <div className="flex items-center justify-between">
                       <span className="font-semibold text-xs text-[#E2E8F0]">
-                        Razorpay Online Gateway (Recommended)
+                        100% Pre-Paid Online Payment (Razorpay / UPI / Cards)
                       </span>
                       <span className="text-[10px] bg-[#121210] text-[#E5C77F] font-bold px-2 py-0.5 rounded">
                         UPI / Cards / NetBanking
                       </span>
                     </div>
                     <p className="text-[11px] text-[#94A3B8] mt-1 leading-relaxed">
-                      Instant verification via Google Pay, PhonePe, Paytm, RuPay, Visa, Mastercard, and all Indian banks.
+                      All pieces are exclusively bespoke and made to order upon confirmed pre-payment. Instant verification via Google Pay, PhonePe, Paytm, RuPay, Visa, Mastercard, and NetBanking.
                     </p>
                   </div>
                 </label>
 
-                {/* Cash on Delivery */}
-                <label
-                  className={`flex items-start gap-3.5 p-4 rounded-2xl border cursor-pointer transition-all ${
-                    paymentMethod === "Cash on Delivery"
-                      ? "border-[#C9A052] bg-[#C9A052]/10 ring-1 ring-[#C9A052]"
-                      : "border-[#C9A052]/20 bg-[#0B0B0A] hover:border-[#A69A86]"
-                  }`}
-                >
-                  <input
-                    type="radio"
-                    name="paymentMethod"
-                    checked={paymentMethod === "Cash on Delivery"}
-                    onChange={() => setPaymentMethod("Cash on Delivery")}
-                    className="mt-1 accent-[#C9A052]"
-                  />
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between">
-                      <span className="font-semibold text-xs text-[#E2E8F0]">
-                        Cash on Delivery (COD)
-                      </span>
-                      <span className="text-[10px] bg-[#161614] text-[#94A3B8] font-medium px-2 py-0.5 rounded">
-                        Pay upon courier arrival
-                      </span>
-                    </div>
-                    <p className="text-[11px] text-[#94A3B8] mt-1 leading-relaxed">
-                      Available for ready-to-ship decor items across verified Indian postal pincodes.
-                    </p>
-                  </div>
-                </label>
+                {/* Important Notice on Custom Craft */}
+                <div className="p-3.5 rounded-xl bg-[#0B0B0A] border border-[#C9A052]/30 space-y-1 text-xs">
+                  <p className="font-bold text-[#E5C77F]">
+                    ✦ Notice: Preparation time is 15 to 20 days depending on article.
+                  </p>
+                  <p className="text-amber-400/90 font-medium">
+                    ✦ Policy Notice: NO Exchange · NO Return for handcrafted customized art.
+                  </p>
+                </div>
               </div>
             </div>
 

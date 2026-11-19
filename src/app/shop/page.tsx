@@ -18,8 +18,6 @@ function ShopContent() {
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const [searchQuery, setSearchQuery] = useState(initialQuery);
   const [sortBy, setSortBy] = useState<"featured" | "price-asc" | "price-desc" | "newest">("featured");
-  const [filterReadyToShip, setFilterReadyToShip] = useState(false);
-  const [filterMadeToOrder, setFilterMadeToOrder] = useState(false);
   const [filterCustomizable, setFilterCustomizable] = useState(false);
   const [maxPrice, setMaxPrice] = useState<number>(50000);
 
@@ -72,8 +70,6 @@ function ShopContent() {
           if (!matchName && !matchDesc && !matchCat && !matchTagline) return false;
         }
         // Availability / Type filters
-        if (filterReadyToShip && !p.isReadyToShip) return false;
-        if (filterMadeToOrder && !p.isMadeToOrder) return false;
         if (filterCustomizable && !p.isCustomizable) return false;
         // Price
         if (p.price > maxPrice) return false;
@@ -91,8 +87,6 @@ function ShopContent() {
     selectedCategory,
     searchQuery,
     sortBy,
-    filterReadyToShip,
-    filterMadeToOrder,
     filterCustomizable,
     maxPrice,
   ]);
@@ -101,8 +95,6 @@ function ShopContent() {
     setSelectedCategory("All");
     setSearchQuery("");
     setSortBy("featured");
-    setFilterReadyToShip(false);
-    setFilterMadeToOrder(false);
     setFilterCustomizable(false);
     setMaxPrice(50000);
   };
@@ -184,32 +176,16 @@ function ShopContent() {
               <label className="flex items-center gap-2 cursor-pointer text-[#E2E8F0]">
                 <input
                   type="checkbox"
-                  checked={filterReadyToShip}
-                  onChange={(e) => setFilterReadyToShip(e.target.checked)}
-                  className="rounded border-[#A69A86] text-[#C9A052] focus:ring-[#C9A052]"
-                />
-                <span>Ready to Ship</span>
-              </label>
-
-              <label className="flex items-center gap-2 cursor-pointer text-[#E2E8F0]">
-                <input
-                  type="checkbox"
-                  checked={filterMadeToOrder}
-                  onChange={(e) => setFilterMadeToOrder(e.target.checked)}
-                  className="rounded border-[#A69A86] text-[#C9A052] focus:ring-[#C9A052]"
-                />
-                <span>Made to Order</span>
-              </label>
-
-              <label className="flex items-center gap-2 cursor-pointer text-[#E2E8F0]">
-                <input
-                  type="checkbox"
                   checked={filterCustomizable}
                   onChange={(e) => setFilterCustomizable(e.target.checked)}
                   className="rounded border-[#A69A86] text-[#C9A052] focus:ring-[#C9A052]"
                 />
                 <span>Customizable Piece</span>
               </label>
+
+              <span className="text-[11px] font-semibold text-[#E5C77F] bg-[#0B0B0A] border border-[#C9A052]/30 px-2.5 py-1 rounded-full">
+                ✦ All Products Made to Order · Prep: 15-20 Days
+              </span>
             </div>
 
             <div className="flex items-center gap-3">
@@ -221,12 +197,10 @@ function ShopContent() {
                 step="500"
                 value={maxPrice}
                 onChange={(e) => setMaxPrice(Number(e.target.value))}
-                className="w-28 sm:w-36 accent-[#C9A052]"
+                className="w-28 sm:w-36 accent-[#C9A052] cursor-pointer"
               />
               {(selectedCategory !== "All" ||
                 searchQuery ||
-                filterReadyToShip ||
-                filterMadeToOrder ||
                 filterCustomizable ||
                 maxPrice < 50000) && (
                 <button

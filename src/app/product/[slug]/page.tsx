@@ -178,16 +178,10 @@ export default function ProductDetailPage({
 
               {/* Floating Badges */}
               <div className="absolute top-4 left-4 flex flex-col gap-2">
-                {product.isReadyToShip ? (
-                  <span className="bg-[#121210]/90 backdrop-blur-md text-[#E5C77F] text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full border border-[#C9A052]/30">
-                    Ready to Ship
-                  </span>
-                ) : (
-                  <span className="bg-[#121210]/90 backdrop-blur-md text-[#FFFDF8] text-xs font-medium tracking-wider uppercase px-3 py-1 rounded-full border border-[#C9A052]/30 flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-[#C9A052]" />
-                    Made to Order ({product.productionLeadTime})
-                  </span>
-                )}
+                <span className="bg-[#121210]/95 backdrop-blur-md text-[#E5C77F] text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full border border-[#C9A052]/40 flex items-center gap-1.5 shadow-md">
+                  <Sparkles className="w-3.5 h-3.5 text-[#C9A052]" />
+                  Made to Order
+                </span>
               </div>
 
               {/* Wishlist button */}
@@ -268,7 +262,7 @@ export default function ProductDetailPage({
               </p>
 
               {/* Price Display */}
-              <div className="flex items-baseline gap-3">
+              <div className="flex items-baseline gap-3 mb-4">
                 <span className="font-serif text-3xl font-bold text-[#E2E8F0]">
                   ₹{currentTotalPrice.toLocaleString("en-IN")}
                 </span>
@@ -277,9 +271,27 @@ export default function ProductDetailPage({
                     ₹{((product.compareAtPrice + (currentUnitPrice - product.price)) * quantity).toLocaleString("en-IN")}
                   </span>
                 )}
-                <span className="text-xs text-emerald-800 bg-emerald-100 font-semibold px-2 py-0.5 rounded-full">
+                <span className="text-xs text-[#E5C77F] bg-[#C9A052]/15 border border-[#C9A052]/30 font-semibold px-2.5 py-0.5 rounded-full">
                   All Taxes Included
                 </span>
+              </div>
+
+              {/* Bold Preparation Notice & No Return / No COD Policy */}
+              <div className="space-y-2 mt-2">
+                <div className="p-3.5 rounded-xl bg-[#161614] border-2 border-[#C9A052] flex items-center gap-3">
+                  <Clock className="w-5 h-5 text-[#C9A052] flex-shrink-0" />
+                  <p className="text-xs sm:text-sm font-bold text-[#E5C77F] tracking-wide">
+                    Note: Preparation time 15 to 20 days depending on article.
+                  </p>
+                </div>
+                <div className="flex flex-wrap items-center gap-2 text-xs">
+                  <span className="font-bold text-[#E2E8F0] bg-[#161614] border border-rose-500/40 text-rose-400 px-3 py-1 rounded-lg">
+                    ✕ NO Cash on Delivery (COD)
+                  </span>
+                  <span className="font-bold text-[#E2E8F0] bg-[#161614] border border-amber-500/40 text-amber-400 px-3 py-1 rounded-lg">
+                    ✕ NO Exchange · NO Return
+                  </span>
+                </div>
               </div>
             </div>
 
@@ -394,7 +406,7 @@ export default function ProductDetailPage({
                   value={specialInstructions}
                   onChange={(e) => setSpecialInstructions(e.target.value)}
                   placeholder="Specify preferences (e.g. heavier gold foil, specific orientation, date needed)..."
-                  className="w-full bg-[#161614] border border-[#A69A86]/30 rounded-xl p-3 text-xs text-[#E2E8F0] placeholder-[#77736B] focus:outline-none focus:border-[#C9A052]"
+                  className="w-full bg-[#0B0B0A] border border-[#C9A052]/30 rounded-xl p-3 text-xs text-[#E2E8F0] placeholder-[#77736B] focus:outline-none focus:border-[#C9A052]"
                 />
               </div>
             </div>
