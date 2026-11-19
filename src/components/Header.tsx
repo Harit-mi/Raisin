@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "./Logo";
 import { useCart } from "@/lib/cart-context";
-import { CATALOG_TIERS } from "@/lib/catalog";
+import { MAIN_COLLECTIONS } from "@/lib/catalog";
 import {
   ShoppingBag,
   Heart,
@@ -171,9 +171,9 @@ export function Header() {
                       </Link>
                     </div>
 
-                    {/* 3 Collection Columns */}
+                    {/* 3 Main Collection Columns */}
                     <div className="grid grid-cols-3 gap-8">
-                      {CATALOG_TIERS.map((tier) => (
+                      {MAIN_COLLECTIONS.map((tier) => (
                         <div
                           key={tier.slug}
                           className="flex flex-col justify-between p-5 rounded-2xl bg-[#141411] border border-[#C9A052]/20 hover:border-[#E5C77F]/60 transition-all duration-300 group/col"
@@ -186,7 +186,7 @@ export function Header() {
                               </span>
                               <span className="w-4 h-[1px] bg-[#C9A052]/40" />
                               <span className="text-[10px] uppercase tracking-widest text-[#94A3B8]">
-                                {tier.categories.length} Categories
+                                {tier.subcategories.length} Subcategories
                               </span>
                             </div>
 
@@ -203,24 +203,34 @@ export function Header() {
                             </p>
 
                             {/* Subcategories List */}
-                            <div className="mt-5 space-y-3 pt-4 border-t border-[#C9A052]/15">
-                              {tier.categories.map((cat) => (
-                                <Link
-                                  key={cat.slug}
-                                  href={`/collections/${tier.slug}/${cat.slug}`}
-                                  onClick={() => setCollectionsMegaOpen(false)}
-                                  className="group/item block hover:translate-x-1 transition-transform"
-                                >
-                                  <div className="flex items-center justify-between text-xs font-serif font-medium text-[#E2E8F0] group-hover/item:text-[#E5C77F]">
+                            <div className="mt-5 space-y-4 pt-4 border-t border-[#C9A052]/15">
+                              {tier.subcategories.map((subcat) => (
+                                <div key={subcat.slug} className="group/item">
+                                  <Link
+                                    href={`/collections/${tier.slug}/${subcat.slug}`}
+                                    onClick={() => setCollectionsMegaOpen(false)}
+                                    className="flex items-center justify-between text-xs font-serif font-bold text-[#E2E8F0] hover:text-[#E5C77F] transition-colors"
+                                  >
                                     <span>
-                                      {cat.number}. {cat.name}
+                                      {subcat.letter}. {subcat.name}
                                     </span>
-                                    <ArrowRight className="w-3 h-3 text-[#C9A052] opacity-0 group-hover/item:opacity-100 transition-opacity" />
+                                    <ArrowRight className="w-3 h-3 text-[#C9A052] opacity-70 group-hover/item:opacity-100 group-hover/item:translate-x-1 transition-all" />
+                                  </Link>
+
+                                  {/* Direct links to Level 4 Product Categories */}
+                                  <div className="flex flex-wrap gap-1 mt-1.5 pl-1">
+                                    {subcat.productCategories.map((prodCat) => (
+                                      <Link
+                                        key={prodCat.slug}
+                                        href={`/collections/${tier.slug}/${subcat.slug}/${prodCat.slug}`}
+                                        onClick={() => setCollectionsMegaOpen(false)}
+                                        className="text-[10px] text-[#94A3B8] hover:text-[#E5C77F] hover:underline transition-colors"
+                                      >
+                                        • {prodCat.name}
+                                      </Link>
+                                    ))}
                                   </div>
-                                  <span className="block text-[10px] text-[#77736B] group-hover/item:text-[#A69A86] line-clamp-1 mt-0.5">
-                                    {cat.sub}
-                                  </span>
-                                </Link>
+                                </div>
                               ))}
                             </div>
                           </div>
@@ -232,7 +242,7 @@ export function Header() {
                               onClick={() => setCollectionsMegaOpen(false)}
                               className="text-[11px] uppercase tracking-wider font-semibold text-[#E5C77F] hover:text-[#FFFDF8] inline-flex items-center gap-1 group/btn transition-colors"
                             >
-                              <span>Explore Tier {tier.number}</span>
+                              <span>Explore Main Collection {tier.number}</span>
                               <ArrowRight className="w-3 h-3 transition-transform group-hover/btn:translate-x-1" />
                             </Link>
                           </div>
@@ -458,7 +468,7 @@ export function Header() {
 
                   {mobileCollectionsExpanded && (
                     <div className="mt-4 space-y-4 pl-3 border-l-2 border-[#C9A052]/30">
-                      {CATALOG_TIERS.map((tier) => (
+                      {MAIN_COLLECTIONS.map((tier) => (
                         <div key={tier.slug} className="space-y-2">
                           <div className="flex items-center justify-between">
                             <Link
@@ -485,19 +495,32 @@ export function Header() {
                           </div>
 
                           {mobileActiveTier === tier.name && (
-                            <div className="pl-3 space-y-2 pt-1 border-l border-[#C9A052]/20">
-                              {tier.categories.map((cat) => (
-                                <Link
-                                  key={cat.slug}
-                                  href={`/collections/${tier.slug}/${cat.slug}`}
-                                  onClick={() => setMobileMenuOpen(false)}
-                                  className="block py-1 text-xs text-[#CBD5E1] hover:text-[#E5C77F]"
-                                >
-                                  <span>{cat.number}. {cat.name}</span>
-                                  <span className="block text-[10px] text-[#77736B]">
-                                    {cat.sub}
-                                  </span>
-                                </Link>
+                            <div className="pl-3 space-y-3 pt-1 border-l border-[#C9A052]/20">
+                              {tier.subcategories.map((subcat) => (
+                                <div key={subcat.slug} className="space-y-1">
+                                  <Link
+                                    key={subcat.slug}
+                                    href={`/collections/${tier.slug}/${subcat.slug}`}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className="block py-1 text-xs font-semibold text-[#CBD5E1] hover:text-[#E5C77F]"
+                                  >
+                                    <span>
+                                      {subcat.letter}. {subcat.name}
+                                    </span>
+                                  </Link>
+                                  <div className="pl-2 space-y-1">
+                                    {subcat.productCategories.map((prodCat) => (
+                                      <Link
+                                        key={prodCat.slug}
+                                        href={`/collections/${tier.slug}/${subcat.slug}/${prodCat.slug}`}
+                                        onClick={() => setMobileMenuOpen(false)}
+                                        className="block text-[11px] text-[#94A3B8] hover:text-[#E5C77F]"
+                                      >
+                                        • {prodCat.name}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </div>
                               ))}
                             </div>
                           )}

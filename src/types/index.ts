@@ -3,6 +3,9 @@ export interface Product {
   name: string;
   slug: string;
   category: string;
+  mainCollectionSlug?: string;
+  subcategorySlug?: string;
+  productCategorySlug?: string;
   tagline: string;
   description: string;
   price: number; // in INR

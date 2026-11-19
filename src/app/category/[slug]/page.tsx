@@ -1,5 +1,5 @@
-import { redirect, notFound } from "next/navigation";
-import { CATALOG_TIERS, findTierForCategory } from "@/lib/catalog";
+import { redirect } from "next/navigation";
+import { CATALOG_TIERS, findHierarchyForCategory } from "@/lib/catalog";
 
 export async function generateStaticParams() {
   const params: { slug: string }[] = [];
@@ -17,18 +17,18 @@ export default async function LegacyCategoryRoute({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const tier = findTierForCategory(slug);
+  const res = findHierarchyForCategory(slug);
 
-  if (tier) {
-    const cat = tier.categories.find(
-      (c) =>
-        c.slug.toLowerCase() === slug.toLowerCase() ||
-        c.name.toLowerCase().replace(/[^a-z0-9]+/g, "-") === slug.toLowerCase()
+  if (res.mainCollection && res.subcategory && res.productCategory) {
+    redirect(
+      `/collections/${res.mainCollection.slug}/${res.subcategory.slug}/${res.productCategory.slug}`
     );
-    if (cat) {
-      redirect(`/collections/${tier.slug}/${cat.slug}`);
-    }
-    redirect(`/collections/${tier.slug}`);
+  }
+  if (res.mainCollection && res.subcategory) {
+    redirect(`/collections/${res.mainCollection.slug}/${res.subcategory.slug}`);
+  }
+  if (res.mainCollection) {
+    redirect(`/collections/${res.mainCollection.slug}`);
   }
 
   // Fallback to collections

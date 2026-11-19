@@ -23,7 +23,9 @@ import {
   Gift,
   HelpCircle,
   ArrowRight,
+  MessageCircle,
 } from "lucide-react";
+import { findHierarchyForCategory } from "@/lib/catalog";
 
 export default function ProductDetailPage({
   params,
@@ -117,6 +119,7 @@ export default function ProductDetailPage({
   const currentTotalPrice = currentUnitPrice * quantity;
 
   const isWishlisted = isInWishlist(product.id);
+  const hierarchy = findHierarchyForCategory(product.productCategorySlug || product.category);
 
   const handleAddToCart = () => {
     setIsAdding(true);
@@ -144,21 +147,56 @@ export default function ProductDetailPage({
   return (
     <div className="bg-[#0B0B0A] py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Breadcrumb Navigation */}
-        <nav className="flex items-center gap-2 text-xs text-[#94A3B8] mb-8">
-          <Link href="/" className="hover:text-[#E2E8F0]">
+        {/* 5-Level Breadcrumb Navigation */}
+        <nav className="flex flex-wrap items-center gap-2 text-xs text-[#94A3B8] mb-8 border-b border-[#C9A052]/20 pb-4">
+          <Link href="/" className="hover:text-[#E5C77F] transition-colors">
             Home
           </Link>
-          <span>/</span>
-          <Link href="/shop" className="hover:text-[#E2E8F0]">
-            Shop
+          <span className="text-[#C9A052] font-mono">/</span>
+          <Link href="/collections" className="hover:text-[#E5C77F] transition-colors">
+            Collections
           </Link>
-          <span>/</span>
-          <Link href={`/shop?category=${encodeURIComponent(product.category)}`} className="hover:text-[#E2E8F0]">
-            {product.category}
-          </Link>
-          <span>/</span>
-          <span className="text-[#E2E8F0] font-medium truncate max-w-[200px]">{product.name}</span>
+
+          {hierarchy.mainCollection && (
+            <>
+              <span className="text-[#C9A052] font-mono">/</span>
+              <Link
+                href={`/collections/${hierarchy.mainCollection.slug}`}
+                className="hover:text-[#E5C77F] transition-colors"
+              >
+                {hierarchy.mainCollection.name}
+              </Link>
+            </>
+          )}
+
+          {hierarchy.mainCollection && hierarchy.subcategory && (
+            <>
+              <span className="text-[#C9A052] font-mono">/</span>
+              <Link
+                href={`/collections/${hierarchy.mainCollection.slug}/${hierarchy.subcategory.slug}`}
+                className="hover:text-[#E5C77F] transition-colors"
+              >
+                {hierarchy.subcategory.name}
+              </Link>
+            </>
+          )}
+
+          {hierarchy.mainCollection && hierarchy.subcategory && hierarchy.productCategory && (
+            <>
+              <span className="text-[#C9A052] font-mono">/</span>
+              <Link
+                href={`/collections/${hierarchy.mainCollection.slug}/${hierarchy.subcategory.slug}/${hierarchy.productCategory.slug}`}
+                className="hover:text-[#E5C77F] transition-colors"
+              >
+                {hierarchy.productCategory.name}
+              </Link>
+            </>
+          )}
+
+          <span className="text-[#C9A052] font-mono">/</span>
+          <span className="text-[#E5C77F] font-semibold truncate max-w-[220px]">
+            {product.name}
+          </span>
         </nav>
 
         {/* Main Product Layout */}
@@ -460,6 +498,19 @@ export default function ProductDetailPage({
                 <span>Instant Checkout</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
+
+              {/* Enquire on WhatsApp Button */}
+              <a
+                href={`https://wa.me/919876543210?text=${encodeURIComponent(
+                  `Hello DRL Resin & Décor, I would like to enquire about "${product.name}" (SKU: ${product.sku}, Price: ₹${currentTotalPrice.toLocaleString("en-IN")}).`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-[#161614] hover:bg-[#1E1E1B] text-[#25D366] hover:text-white border border-[#25D366]/40 hover:border-[#25D366] py-3.5 px-6 rounded-xl font-semibold text-xs uppercase tracking-widest transition-all shadow-sm flex items-center justify-center gap-2 group"
+              >
+                <MessageCircle className="w-4 h-4 text-[#25D366] group-hover:scale-110 transition-transform" />
+                <span>Enquire on WhatsApp</span>
+              </a>
 
               <div className="flex items-center justify-center gap-2 text-xs text-[#94A3B8] pt-2">
                 <Truck className="w-3.5 h-3.5 text-[#C9A052]" />
