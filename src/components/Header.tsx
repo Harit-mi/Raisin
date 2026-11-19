@@ -42,13 +42,9 @@ export function Header() {
     setSearchOpen(false);
   }, [pathname]);
 
-  const navLinks = [
+  const navLinks: { label: string; href: string; highlight?: boolean }[] = [
     { label: "Home", href: "/" },
-    { label: "Shop All", href: "/shop" },
-    { label: "Collections", href: "/shop#collections" },
-    { label: "Custom Studio", href: "/custom-studio", highlight: true },
-    { label: "Book Consultation", href: "/book-consultation" },
-    { label: "Our Story", href: "/about" },
+    { label: "Collections", href: "/shop" },
     { label: "Contact", href: "/contact" },
   ];
 
